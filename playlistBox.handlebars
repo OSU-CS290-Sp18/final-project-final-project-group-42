@@ -1,0 +1,14 @@
+<div class="playlistBox">
+  <h4 class="playListName">Good Songs</h4>
+  <!-- {{playListName}} -->
+    <div class="playListContentBox">
+      {{#each_upto songContent 2}}
+        <p id="title">
+          {{songTitle}}
+        </p>
+        <p id="artist">
+          {{songArtist}}
+        </p>
+      {{/each}}
+    </div>
+</div>
