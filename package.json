@@ -1,0 +1,27 @@
+{
+  "name": "Mixer",
+  "version": "1.0.0",
+  "description": "Mixes playlist with dank results",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "handlebars view/mixer.handlebars -f public/templates/mixer.js && handlebars view/partials/createButtonTemplate.handlebars -f public/templates/createButton.js && handlebars view/partials/headerTemplate.handlebars -f public/templates/header.js && handlebars view/partials/playlistBoxTemplate.handlebars -f public/templates/playlistBox.js && handlebars view/partials/errorTemplate.handlebars -f public/templates/error.js && handlebars view/partials/songInfoTemplate.handlebars -f public/templates/songInfo.js",
+    "prestart": "npm run build",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSU-CS290-Sp18/final-project-final-project-group-42.git"
+  },
+  "author": "Group 42",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "???"
+  },
+  "homepage": "???",
+  "dependencies": {
+    "express": "^4.16.3",
+    "handlebars": "^4.0.11"
+  },
+  "devDependencies": {}
+}

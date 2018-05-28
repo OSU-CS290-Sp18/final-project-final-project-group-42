@@ -13,7 +13,7 @@
     {{#if home}}
       {{>create}}
       {{>playlists}}
-    {{#else if newPlaylist}}
+    {{else if newPlaylist}}
       <div class="Playlist">
         {{>newSong}}
         {{>songList}}
@@ -22,7 +22,7 @@
         {{>newSong}}
         {{>songList}}
       </div>
-    {{#else if playlist}}
+    {{else if playlist}}
       <div class="playlist">
         {{>songList}}
       </div>
