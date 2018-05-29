@@ -78,5 +78,22 @@ body{
 
 
 
+.playListName{
+   background-color: blue;
+   color: white;
+   padding-left: 55px;
+   font-size: 20px;
+}
+
+.playListContentBox{
+   display: flex;
+   background-color: white;
+   margin: 2px 2px 2px 2px;
+   padding: 2px 2px 2px 2px;
+   width: 350px;
+   height: 100px;
+   align-items: flex-right;
+   
+}
 
 
