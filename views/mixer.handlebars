@@ -18,7 +18,12 @@
   <body>
     {{#if home}}
       {{>createButtonTemplate}}
-      {{>playlistBoxTemplate}}
+      <div class="playlistBoxContainer">
+        <h2 class="playlistsTitle">Playlists</h2>
+        {{#each songListHolder}}
+          {{>playlistBoxTemplate}}
+        {{/each}}
+      </div>
     <!-- {{else if newPlaylist}}
       <div class="Playlist">
         {{>newSong}}
