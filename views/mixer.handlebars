@@ -18,20 +18,22 @@
   <body>
     {{#if home}}
       {{>createButtonTemplate}}
+      <h2 class="playlistsTitle">Playlists</h2>
       <div class="playlistBoxContainer">
-        <h2 class="playlistsTitle">Playlists</h2>
         {{#each songListHolder}}
           {{>playlistBoxTemplate}}
         {{/each}}
       </div>
     {{else if newPlaylist}}
-      <div class="Playlist">
-        {{>songInfoTemplate}}
-        {{>playListTemplate}}
-      </div>
-      <div class="Playlist">
-        {{>songInfoTemplate}}
-        {{>playListTemplate}}
+      <div class = "songAdder">
+         <div class="Playlist">
+           {{>songInfoTemplate}}
+            {{>playListTemplate}}
+         </div>
+         <div class="Playlist">
+           {{>songInfoTemplate}}
+           {{>playListTemplate}}
+         </div>
       </div>
     {{else if playlist}}
       <div class="playlist">

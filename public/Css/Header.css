@@ -5,6 +5,12 @@ header {
    
 }
 
+a{
+
+   text-decoration: none;
+   color: white;
+}
+
 body{
     margin: 0px 0px 0px 0px;
 }
@@ -82,18 +88,78 @@ body{
    background-color: blue;
    color: white;
    padding-left: 55px;
-   font-size: 20px;
+   font-size: 30px;
 }
 
-.playListContentBox{
-   display: flex;
-   background-color: white;
-   margin: 2px 2px 2px 2px;
-   padding: 2px 2px 2px 2px;
-   width: 350px;
-   height: 100px;
-   align-items: flex-right;
-   
+.playlistBoxContainer{
+       color: white;
+       margin-left: 20px;
+       display: flex;
+       flex-wrap: wrap;
+       
+}
+
+.playListName{
+    margin-down: 0px;  
+}
+
+.playlistBox{
+       border: black solid 1px;     
+       background-color: blue;
+       margin: 5px 20px 5px 20px;
+       padding: 5px 25px 5px 25px;
+       width: 130px;
+       height: 120px;       
 }
 
 
+#Add-Song{
+    background-color: #319df6;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 10px;
+    height: 50px;
+    width: 50px;
+    box-shadow: 2px 2px 10px grey;
+}
+
+#Add-Song:hover{
+    cursor: pointer;
+    background-color: #1864dd;
+    
+}
+
+
+#Song-input{
+    background-color: #EEEEEE;
+    border: black solid .1px;   
+
+}
+
+#Song-input:focus{
+    background-color: white;
+}
+
+.songAdder{
+     color: white;
+     display: flex;
+           
+}
+
+.add-song-info{
+     margin-left: 29%;
+
+}
+
+.Playlist{
+     background-color: blue;
+     margin: auto;
+     width: 50%;
+     padding: 10px;
+     font-size: 15px;
+}
+
+
+
+ 
