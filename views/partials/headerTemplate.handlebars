@@ -5,10 +5,12 @@
       <nav class="navbar">
           <ul class="navlist">
           <li class="Nitem Mixer-Title">Mixer</li>
+          {{#if search}}
           <li class="Nitem navbar-search">
             <input type="text" id="navbar-search-input" placeholder="Input here to search">
             <button type="button" id="Mixer-Search"></button>
           </li>
+          {{/if}}
         </ul>
       </nav>
     </header>
