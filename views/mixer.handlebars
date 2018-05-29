@@ -9,10 +9,12 @@
     <!-- <script src="/index.js" charset="utf-8" defer></script> -->
   </head>
 
+  {{>headerTemplate}}
+
   <body>
     {{#if home}}
-      <!-- {{>createButtonTemplate}} -->
-      <!-- {{>playListTemplate}} -->
+      {{>createButtonTemplate}}
+      {{>playListTemplate}}
     <!-- {{else if newPlaylist}}
       <div class="Playlist">
         {{>newSong}}

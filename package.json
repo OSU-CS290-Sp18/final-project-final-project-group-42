@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "handlebars view/mixer.handlebars -f public/templates/mixer.js && handlebars view/partials/createButtonTemplate.handlebars -f public/templates/createButton.js && handlebars view/partials/headerTemplate.handlebars -f public/templates/header.js && handlebars view/partials/playlistBoxTemplate.handlebars -f public/templates/playlistBox.js && handlebars view/partials/errorTemplate.handlebars -f public/templates/error.js && handlebars view/partials/songInfoTemplate.handlebars -f public/templates/songInfo.js",
+    "build": "handlebars views/mixer.handlebars -f public/templates/mixer.js && handlebars views/partials/createButtonTemplate.handlebars -f public/templates/createButtonTemplate.js && handlebars views/partials/headerTemplate.handlebars -f public/templates/headerTemplate.js && handlebars views/partials/playlistBoxTemplate.handlebars -f public/templates/playlistBoxTemplate.js && handlebars views/partials/errorTemplate.handlebars -f public/templates/errorTemplate.js && handlebars views/partials/songInfoTemplate.handlebars -f public/templates/songInfoTemplate.js",
     "prestart": "npm run build",
     "start": "node server.js"
   },
