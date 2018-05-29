@@ -1,7 +1,12 @@
 
 header {
+    
     background-color: blue;
-  
+   
+}
+
+body{
+    margin: 0px 0px 0px 0px;
 }
 
 .Nitem{
@@ -12,9 +17,11 @@ header {
 }
 
 .navbar{
+    padding-top: 10px;
     padding-right: 10px;
     padding-left: 10px;
     background-color: blue;
+    
 }
 
 .Mixer-Title{
@@ -56,7 +63,7 @@ header {
 
 #Mixer-Search:hover{
     cursor: pointer;
-    background-color: blue;
+    background-color: #1864dd;
     border: none;
     border-radius: 50%;
     color: white;
