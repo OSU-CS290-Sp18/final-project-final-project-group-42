@@ -74,10 +74,11 @@ app.get('/', function(req, res, next){
     res.status(200);
     res.render('mixer', {
       title: 'Home',
+      search: 1,
       home: 1,
       songListHolder: songListHolder,
-      title: songListHolder[0][0].title,
-      artist: songListHolder[0][0].artist,
+      title: 'dogs',
+      artist: 'cats'
     });
 });
 
