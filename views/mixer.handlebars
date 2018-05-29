@@ -24,14 +24,14 @@
           {{>playlistBoxTemplate}}
         {{/each}}
       </div>
-    <!-- {{else if newPlaylist}}
+    {{else if newPlaylist}}
       <div class="Playlist">
-        {{>newSong}}
-        {{>songList}}
+        {{>songInfoTemplate}}
+        {{>playListTemplate}}
       </div>
       <div class="Playlist">
-        {{>newSong}}
-        {{>songList}}
+        {{>songInfoTemplate}}
+        {{>playListTemplate}}
       </div>
     {{else if playlist}}
       <div class="playlist">
@@ -42,7 +42,7 @@
       </div>
       <div class="newPlaylist">
         {{>songList}}
-      </div> -->
+      </div>
     {{/if}}
   </body>
 </html>

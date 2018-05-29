@@ -64,8 +64,17 @@ var s2 =[
   }
 ];
 
-songListHolder[0] = s1;
-songListHolder[1] = s2;
+songListHolder = [
+  {
+    playListName: 'Good Songs',
+    list: s1
+  },
+  {
+    playListName: 'Real Music',
+    list: s2
+  }
+];
+//songListHolder[1] = s2;
 
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -77,9 +86,17 @@ app.get('/', function(req, res, next){
       search: 1,
       home: 1,
       songListHolder: songListHolder,
-      title: 'dogs',
-      artist: 'cats'
+      playListName: 'Playlist-#'
     });
+});
+
+app.get('/newPlaylist', function(req, res, next){
+    res.status(200);
+    res.render('mixer', {
+      title: 'New Playlist',
+      newPlaylist: 1,
+      songlist: songListHolder
+    })
 });
 
 app.use(express.static('public'));
