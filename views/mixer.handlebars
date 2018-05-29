@@ -6,7 +6,11 @@
 
     <script> src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" defer></script>
 
+    <link rel="stylesheet" href="/Css/buttonStyle.css" media="screen">
+    <link rel="stylesheet" href="/Css/Header.css" media="screen">
+
     <!-- <script src="/index.js" charset="utf-8" defer></script> -->
+
   </head>
 
   {{>headerTemplate}}
@@ -14,7 +18,7 @@
   <body>
     {{#if home}}
       {{>createButtonTemplate}}
-      {{>playListTemplate}}
+      {{>playlistBoxTemplate}}
     <!-- {{else if newPlaylist}}
       <div class="Playlist">
         {{>newSong}}

@@ -2,13 +2,13 @@
   <h4 class="playListName">Good Songs</h4>
   <!-- {{playListName}} -->
     <div class="playListContentBox">
-      {{#each_upto songContent 2}}
+      {{#each songContent}}
         <p id="title">
           {{songTitle}}
         </p>
         <p id="artist">
           {{songArtist}}
         </p>
-      {{/each_upto}}
+      {{/each}}
     </div>
 </div>
