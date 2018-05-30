@@ -2,16 +2,21 @@
   padding: 100px 100px 100px 200px;
 }
 
-#create-button{
+#create-button a{
+  display: block;
+  text-decoration: none;
   color: white;
   background-color: #319df6;
   font-size: 100px;
   padding: 100px 400px;
+  margin: none;
+  shape-outside: none;
   cursor: pointer;
   box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.75);
   border: none;
+  border-radius: 10px;
 }
 
-#create-button:hover{
+#create-button a:hover{
   background-color: #1864dd;
 }

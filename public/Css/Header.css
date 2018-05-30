@@ -1,15 +1,15 @@
 
 header {
-    
+
     background-color: blue;
-   
+
 }
 
-a{
+/* a{
 
    text-decoration: none;
    color: white;
-}
+} */
 
 body{
     margin: 0px 0px 0px 0px;
@@ -27,7 +27,7 @@ body{
     padding-right: 10px;
     padding-left: 10px;
     background-color: blue;
-    
+
 }
 
 .Mixer-Title{
@@ -36,14 +36,14 @@ body{
 }
 
 
-.navbar-search{ 
+.navbar-search{
     float: right;
 
 }
 
 #navbar-search-input{
     background-color: #EEEEEE;
-    border: white solid .1px;   
+    border: white solid .1px;
 
 }
 
@@ -64,7 +64,7 @@ body{
     font-size: 10px;
     height: 20px;
     width: 20px;
-    box-shadow: 2px 2px 10px grey;    
+    box-shadow: 2px 2px 10px grey;
 }
 
 #Mixer-Search:hover{
@@ -96,20 +96,20 @@ body{
        margin-left: 20px;
        display: flex;
        flex-wrap: wrap;
-       
+
 }
 
 .playListName{
-    margin-down: 0px;  
+    margin-down: 0px;
 }
 
 .playlistBox{
-       border: black solid 1px;     
+       border: black solid 1px;
        background-color: blue;
        margin: 5px 20px 5px 20px;
        padding: 5px 25px 5px 25px;
        width: 130px;
-       height: 120px;       
+       height: 120px;
 }
 
 
@@ -127,13 +127,13 @@ body{
 #Add-Song:hover{
     cursor: pointer;
     background-color: #1864dd;
-    
+
 }
 
 
 #Song-input{
     background-color: #EEEEEE;
-    border: black solid .1px;   
+    border: black solid .1px;
 
 }
 
@@ -144,7 +144,7 @@ body{
 .songAdder{
      color: white;
      display: flex;
-           
+
 }
 
 .add-song-info{
@@ -159,7 +159,3 @@ body{
      padding: 10px;
      font-size: 15px;
 }
-
-
-
- 
