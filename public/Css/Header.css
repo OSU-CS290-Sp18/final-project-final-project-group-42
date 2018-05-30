@@ -30,11 +30,16 @@ body{
 
 }
 
-.Mixer-Title{
+.Mixer-Title a{
     color: White;
     font-size: 50px;
+    text-decoration: none;
 }
 
+.Mixer-Title a:hover {
+  color: #ececec;
+
+}
 
 .navbar-search{
     float: right;
@@ -96,11 +101,12 @@ body{
        margin-left: 20px;
        display: flex;
        flex-wrap: wrap;
-
 }
 
-.playListName{
+.playListName a{
     margin-down: 0px;
+    text-decoration: none;
+    color: white;
 }
 
 .playlistBox{

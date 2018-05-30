@@ -7,62 +7,65 @@ var port = process.env.PORT || 3000;
 
 var songListHolder = []
 
-var s1 = [  {
-    title: "All Star",
-    artist: "Smash Mouth"
-  },
-  {
-    title: "Africa",
-    artist: "Toto"
-  },
-  {
-    title: "Who Let the Dogs Out",
-    artist: "The Baha Men"
-  },
-  {
-    title: "Gormet Race",
-    artist: "Kirbert"
-  },
-  {
-    title: "Tots",
-    artist: "Mots"
-  },
-  {
-    title: "TUBTHUMPING",
-    artist: "CHUBAWUMBA"
-  }
-];
+var s1 = require('./songList1');
+var s2 = require('./songList2');
 
-var s2 =[
-  {
-    title: "Arms Wide Open",
-    artist: "Creed"
-  },
-  {
-    title: "How You Remind Me",
-    artist: "Nickleback"
-  },
-  {
-    title: "The Reason",
-    artist: "Hoobastak"
-  },
-  {
-    title: "Iris",
-    artist: "The Goo Goo Dolls"
-  },
-  {
-    title: "Nookie",
-    artist: "Limp Biskit"
-  },
-  {
-    title: "All Star",
-    artist: "Guy Feiri"
-  },
-  {
-     "title": "Fidle Sticks",
-     "artist": "none"
-  }
-];
+// var s1 = [  {
+//     title: "All Star",
+//     artist: "Smash Mouth"
+//   },
+//   {
+//     title: "Africa",
+//     artist: "Toto"
+//   },
+//   {
+//     title: "Who Let the Dogs Out",
+//     artist: "The Baha Men"
+//   },
+//   {
+//     title: "Gormet Race",
+//     artist: "Kirbert"
+//   },
+//   {
+//     title: "Tots",
+//     artist: "Mots"
+//   },
+//   {
+//     title: "TUBTHUMPING",
+//     artist: "CHUBAWUMBA"
+//   }
+// ];
+//
+// var s2 =[
+//   {
+//     title: "Arms Wide Open",
+//     artist: "Creed"
+//   },
+//   {
+//     title: "How You Remind Me",
+//     artist: "Nickleback"
+//   },
+//   {
+//     title: "The Reason",
+//     artist: "Hoobastak"
+//   },
+//   {
+//     title: "Iris",
+//     artist: "The Goo Goo Dolls"
+//   },
+//   {
+//     title: "Nookie",
+//     artist: "Limp Biskit"
+//   },
+//   {
+//     title: "All Star",
+//     artist: "Guy Feiri"
+//   },
+//   {
+//      "title": "Fidle Sticks",
+//      "artist": "none"
+//   }
+// ];
 
 songListHolder = [
   {
@@ -76,27 +79,35 @@ songListHolder = [
 ];
 //songListHolder[1] = s2;
 
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 app.get('/', function(req, res, next){
     res.status(200);
-    res.render('mixer', {
+    res.render('mixerHomeView', {
       title: 'Home',
       search: 1,
-      home: 1,
-      songListHolder: songListHolder,
-      playListName: 'Playlist-#'
+      //home: 1,
+      songListHolder: songListHolder
     });
 });
 
 app.get('/newPlaylist', function(req, res, next){
     res.status(200);
-    res.render('mixer', {
+    res.render('mixerCreateView', {
       title: 'New Playlist',
-      newPlaylist: 1,
+      //newPlaylist: 1,
       songlist: songListHolder
     })
+});
+
+app.get('/playlist/:name', function(req, res, next){
+  var name = req.params.name;
+  res.status(200);
+  res.render('mixerPlaylistView', {
+    title: name,
+    songlist: songListHolder
+  });
 });
 
 app.use(express.static('public'));

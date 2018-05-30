@@ -1,11 +1,8 @@
 <div class = "playListBox">
 
-   <ol class = "playLists">
-   {{#each songList}}
-
-        <li>{{songList}}</li>
-
-   {{/each}}
-   </ol>
-
+  <ol class = "playLists">
+    {{#each title}}
+      <li>{{title}} - {{artist}}</li>
+      {{/each}}
+  </ol>
 </div>
