@@ -113,7 +113,7 @@ app.get('/playlist/:name', function(req, res, next){
 app.use(express.static('public'));
 
 app.use(function(req, res){
-  res.status(404).render('errorTemplate');
+  res.status(404).render('errorTemplate', {title: "page not found"});
 });
 
 app.listen(port, function (err) {
