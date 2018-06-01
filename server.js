@@ -112,6 +112,10 @@ app.get('/playlist/:name', function(req, res, next){
 
 app.use(express.static('public'));
 
-app.listen(port, function () {
+app.use(function(req, res){
+  res.status(404).render('errorTemplate');
+});
+
+app.listen(port, function (err) {
   console.log("== Server is listening on port", port);
 });
