@@ -7,65 +7,65 @@ var port = process.env.PORT || 3000;
 
 var songListHolder = []
 
-var s1 = require('./songList1');
-var s2 = require('./songList2');
+// var s1 = require('./songList1');
+// var s2 = require('./songList2');
 
-// var s1 = [  {
-//     title: "All Star",
-//     artist: "Smash Mouth"
-//   },
-//   {
-//     title: "Africa",
-//     artist: "Toto"
-//   },
-//   {
-//     title: "Who Let the Dogs Out",
-//     artist: "The Baha Men"
-//   },
-//   {
-//     title: "Gormet Race",
-//     artist: "Kirbert"
-//   },
-//   {
-//     title: "Tots",
-//     artist: "Mots"
-//   },
-//   {
-//     title: "TUBTHUMPING",
-//     artist: "CHUBAWUMBA"
-//   }
-// ];
-//
-// var s2 =[
-//   {
-//     title: "Arms Wide Open",
-//     artist: "Creed"
-//   },
-//   {
-//     title: "How You Remind Me",
-//     artist: "Nickleback"
-//   },
-//   {
-//     title: "The Reason",
-//     artist: "Hoobastak"
-//   },
-//   {
-//     title: "Iris",
-//     artist: "The Goo Goo Dolls"
-//   },
-//   {
-//     title: "Nookie",
-//     artist: "Limp Biskit"
-//   },
-//   {
-//     title: "All Star",
-//     artist: "Guy Feiri"
-//   },
-//   {
-//      "title": "Fidle Sticks",
-//      "artist": "none"
-//   }
-// ];
+var s1 = [  {
+    title: "All Star",
+    artist: "Smash Mouth"
+  },
+  {
+    title: "Africa",
+    artist: "Toto"
+  },
+  {
+    title: "Who Let the Dogs Out",
+    artist: "The Baha Men"
+  },
+  {
+    title: "Gormet Race",
+    artist: "Kirbert"
+  },
+  {
+    title: "Tots",
+    artist: "Mots"
+  },
+  {
+    title: "TUBTHUMPING",
+    artist: "CHUBAWUMBA"
+  }
+];
+
+var s2 =[
+  {
+    title: "Arms Wide Open",
+    artist: "Creed"
+  },
+  {
+    title: "How You Remind Me",
+    artist: "Nickleback"
+  },
+  {
+    title: "The Reason",
+    artist: "Hoobastak"
+  },
+  {
+    title: "Iris",
+    artist: "The Goo Goo Dolls"
+  },
+  {
+    title: "Nookie",
+    artist: "Limp Biskit"
+  },
+  {
+    title: "All Star",
+    artist: "Guy Feiri"
+  },
+  {
+     "title": "Fidle Sticks",
+     "artist": "none"
+  }
+];
 
 songListHolder = [
   {
@@ -97,7 +97,7 @@ app.get('/newPlaylist', function(req, res, next){
     res.render('mixerCreateView', {
       title: 'New Playlist',
       //newPlaylist: 1,
-      songlist: songListHolder
+      //songlist: songListHolder
     })
 });
 
