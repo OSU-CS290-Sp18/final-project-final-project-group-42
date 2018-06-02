@@ -97,7 +97,7 @@ app.get('/newPlaylist', function(req, res, next){
     res.status(200);
     res.render('mixerCreateView', {
       title: 'New Playlist',
-      playlists: [{side: 'left',},{side: 'right'}]      
+      playlists: [{side: 'left'},{side: 'right'}]     
       //newPlaylist: 1,
       //songlist: songListHolder
     })
