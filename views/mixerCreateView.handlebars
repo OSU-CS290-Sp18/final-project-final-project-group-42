@@ -1,6 +1,6 @@
 <div class="mix">
   <h3> How often would you like to switch between playlists:</h3>
-  <select class="mix-level">
+  <select id="mix-level">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -8,13 +8,14 @@
     <option value="5">5</option>
   </select>
 </div>
-<div class = "songAdder">
-   <div class="Playlist">
+  {{#each playlists}}
+   <div class="add-songs-container {{side}}">
      {{>songInfoTemplate}}
       {{>playListTemplate}}
    </div>
-   <div class="Playlist">
-     {{>songInfoTemplate}}
-     {{>playListTemplate}}
-   </div>
+   {{/each}}
+</div>
+
+<div class="mix-playlists">
+  <button> Mix those bad boys! </button>
 </div>
