@@ -1,33 +1,30 @@
-  {{>headerTemplate}}
-
-  <body>
-    {{#if home}}
-      {{>createButtonTemplate}}
-      <h2 class="playlistsTitle">Playlists</h2>
-      <div class="playlistBoxContainer">
-        {{#each songListHolder}}
-          {{>playlistBoxTemplate}}
-        {{/each}}
-      </div>
-    {{else if newPlaylist}}
-      <div class = "songAdder">
-         <div class="Playlist">
-           {{>songInfoTemplate}}
-            {{>playListTemplate}}
-         </div>
-         <div class="Playlist">
-           {{>songInfoTemplate}}
-           {{>playListTemplate}}
-         </div>
-      </div>
-    {{else if playlist}}
-      <div class="playlist">
-        {{>songList}}
-      </div>
-      <div class="playlist">
-        {{>songList}}
-      </div>
-      <div class="newPlaylist">
-        {{>songList}}
-      </div>
-    {{/if}}
+{{#if home}}
+  {{>createButtonTemplate}}
+  <h2 class="playlistsTitle">Playlists</h2>
+  <div class="playlistBoxContainer">
+    {{#each songListHolder}}
+      {{>playlistBoxTemplate}}
+    {{/each}}
+  </div>
+{{else if newPlaylist}}
+  <div class = "songAdder">
+     <div class="Playlist">
+       {{>songInfoTemplate}}
+       {{>playListTemplate}}
+     </div>
+     <div class="Playlist">
+       {{>songInfoTemplate}}
+       {{>playListTemplate}}
+     </div>
+  </div>
+{{else if playlist}}
+  <div class="playlist">
+    {{>songList}}
+  </div>
+  <div class="playlist">
+    {{>songList}}
+  </div>
+  <div class="newPlaylist">
+    {{>songList}}
+  </div>
+  {{/if}}

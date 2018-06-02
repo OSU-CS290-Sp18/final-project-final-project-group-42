@@ -1,5 +1,3 @@
-
-
 //mixes the playlists
 function mixer(mixLevel, s1, s2){
   var mix = [];//new playlist
@@ -33,78 +31,48 @@ function mixer(mixLevel, s1, s2){
 
 
 //node testing
-/*var fs = require('fs');
-var s1 = [
+var fs = require('fs');
+var s1 = require('./songList1.json');
+var s2 = require('./songList2.json');
+
+mix = mixer(process.argv[2], s1, s2);
+
+var songListHolder = [
   {
-    title: "All Star",
-    artist: "Smash Mouth"
+    playListName: 'Playlist 1',
+    list: s1
   },
   {
-    title: "Africa",
-    artist: "Toto"
+    playListName: 'Playlist 2',
+    list: s2
   },
   {
-    title: "Who Let the Dogs Out",
-    artist: "The Baha Men"
-  },
-  {
-    title: "Gormet Race",
-    artist: "Kirbert"
-  },
-  {
-    title: "Tots",
-    artist: "Mots"
-  },
-  {
-    title: "TUBTHUMPING",
-    artist: "CHUBAWUMBA"
-  }
-];
-var s2 =[
-  {
-    title: "Arms Wide Open",
-    artist: "Creed"
-  },
-  {
-    title: "How You Remind Me",
-    artist: "Nickleback"
-  },
-  {
-    title: "The Reason",
-    artist: "Hoobastak"
-  },
-  {
-    title: "Iris",
-    artist: "The Goo Goo Dolls"
-  },
-  {
-    title: "Nookie",
-    artist: "Limp Biskit"
-  },
-  {
-    title: "All Star",
-    artist: "Guy Feiri"
-  },
-  {
-     "title": "Fidle Sticks",
-     "artist": "none"
+    playListName: 'Playlist Mix!',
+    list: mix
   }
 ];
 
-console.log("s1:\n", s1);
-console.log("s2:\n", s2);
+fs.writeFile('./mix.json', JSON.stringify(songListHolder), (err) => {
+  if(err) {
+    console.error(err);
+    return;
+  };
+});
 
-console.log("\nMixes");
-
-mix = mixer(1, s1, s2);
-console.log("mix 1:\n", mix);
-
-mix = mixer(2, s1, s2);
-console.log("mix 2:\n", mix);
-
-mix = mixer(3, s1, s2);
-console.log("mix 3:\n", mix);
-
-mix = mixer(4, s1, s2);
-console.log("mix 4:\n", mix);
-*/
+//
+// console.log("s1:\n", s1);
+// console.log("s2:\n", s2);
+//
+// console.log("\nMixes");
+//
+// mix = mixer(1, s1, s2);
+// console.log("mix 1:\n", mix);
+//
+// mix = mixer(2, s1, s2);
+// console.log("mix 2:\n", mix);
+//
+// mix = mixer(3, s1, s2);
+// console.log("mix 3:\n", mix);
+//
+// mix = mixer(4, s1, s2);
+// console.log("mix 4:\n", mix);
