@@ -1,3 +1,7 @@
+var mix = [{playlistTitle: 'Playlist Mix', songs: {}}];
+var s1 = [];
+var s2 = [];
+
 //mixes the playlists
 function mixer(mixLevel, s1, s2){
   var mix = [];//new playlist
@@ -28,17 +32,6 @@ function mixer(mixLevel, s1, s2){
   }
   return mix;
 }
-
-//node testing
-// var fs = require('fs');
-var mix = [{playlistTitle: 'Playlist Mix', songs: {}}];
-//var s1 = [{PlaylistTitle: 'Playlist 1', songs: {}}]; //require('./songList1.json');
-//var s2 = [{PlaylistTitle: 'Playlist 2', songs: {}}]; //require('./songList2.json');
-var s1 = [];
-var s2 = [];
-
-
-//mix = mixer(mixLevel, s1, s2);
 
 function addSong1(){
   var addSongContainer = document.getElementsByClassName('left');
@@ -71,22 +64,14 @@ function addSong2(){
       playListName: 'Playlist 2',
       list: s2
     };
-  addSongContainer[0].lastElementChild.remove();//  addSongContainer[0].removeChild(addSongContainer[0].lastChild);
+  addSongContainer[0].lastElementChild.remove();
   var playlistHTML = Handlebars.templates.playListTemplate(holder);
   addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
 }
 
-
-
 function mixPlaylists(event){
   var mixLevel = document.getElementById('mix-level').value;
   mix = mixer(mixLevel, s1, s2);
-  // fs.writeFile('./mix.json', JSON.stringify(songListHolder), (err) => {
-  //   if(err) {
-  //     console.error(err);
-  //     return;
-  //   };
-  // });
   var holder =
     {
       playListName: 'Playlist Mix!',
@@ -106,7 +91,6 @@ function mixPlaylists(event){
 }
 
 window.addEventListener('DOMContentLoaded', function(){
-
   var addButtonLeft = document.getElementsByClassName('add-song-left');
   if(addButtonLeft) {
     console.log('addbutton is working kinda');
@@ -117,27 +101,8 @@ window.addEventListener('DOMContentLoaded', function(){
     console.log('addbutton is working kinda');
     addButtonRight[0].addEventListener('click', addSong2);
   }
-
   var mixButton = document.getElementById('mix-button');
   if(mixButton){
     mixButton.addEventListener('click', mixPlaylists)
   }
 });
-
-//
-// console.log("s1:\n", s1);
-// console.log("s2:\n", s2);
-//
-// console.log("\nMixes");
-//
-// mix = mixer(1, s1, s2);
-// console.log("mix 1:\n", mix);
-//
-// mix = mixer(2, s1, s2);
-// console.log("mix 2:\n", mix);
-//
-// mix = mixer(3, s1, s2);
-// console.log("mix 3:\n", mix);
-//
-// mix = mixer(4, s1, s2);
-// console.log("mix 4:\n", mix);

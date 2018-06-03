@@ -59,6 +59,21 @@ fs.writeFile('./mix.json', JSON.stringify(songListHolder), (err) => {
   };
 });
 
+var songData = [
+  {
+    mixTitle: 'Demo mix',
+    mixData: songListHolder
+  }
+]
+
+
+fs.writeFile('./songData.json', JSON.stringify(songData), (err) => {
+  if(err) {
+    console.error(err);
+    return;
+  };
+});
+
 //
 // console.log("s1:\n", s1);
 // console.log("s2:\n", s2);
