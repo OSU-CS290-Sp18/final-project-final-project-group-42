@@ -109,6 +109,11 @@ body{
     color: white;
 }
 
+.playListBox {
+  border: black solid 1px;
+  background-color: #a3c1f0;
+}
+
 .playlistBox{
        border: black solid 1px;
        background-color: blue;
@@ -137,13 +142,13 @@ body{
 }
 
 
-#song-input{
+.song-input{
     background-color: #EEEEEE;
     border: black solid .1px;
 
 }
 
-#song-input:focus{
+.song-input:focus{
     background-color: white;
 }
 

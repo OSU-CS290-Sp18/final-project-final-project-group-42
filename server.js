@@ -97,11 +97,15 @@ app.get('/newPlaylist', function(req, res, next){
     res.status(200);
     res.render('mixerCreateView', {
       title: 'New Playlist',
-      playlists: [{side: 'left'},{side: 'right'}]     
-      //newPlaylist: 1,
+      playlists: [{side: 'left'},{side: 'right'}]
+      //playListTemplate: [{playListName: 'Empty'}, {playListName: 'Empty'}]
       //songlist: songListHolder
     })
 });
+
+// app.post('/newPlaylist', function(req, res, next) {
+//
+// });
 
 app.get('/playlist/:name', function(req, res, next){
   var name = req.params.name;
@@ -113,6 +117,8 @@ app.get('/playlist/:name', function(req, res, next){
 });
 
 app.use(express.static('public'));
+
+app.use(express.static('public/templates'));
 
 app.use(function(req, res){
   res.status(404).render('errorTemplate', {title: "page not found"});

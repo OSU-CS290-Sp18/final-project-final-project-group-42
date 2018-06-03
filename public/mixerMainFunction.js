@@ -31,39 +31,52 @@ function mixer(mixLevel, s1, s2){
 
 //node testing
 // var fs = require('fs');
-var mix = [{}];
-var s1 = [{}]; //require('./songList1.json');
-var s2 = [[]]; //require('./songList2.json');
+var mix = [{playlistTitle: 'Playlist Mix', songs: {}}];
+//var s1 = [{PlaylistTitle: 'Playlist 1', songs: {}}]; //require('./songList1.json');
+//var s2 = [{PlaylistTitle: 'Playlist 2', songs: {}}]; //require('./songList2.json');
+var s1 = [];
+var s2 = [];
+
 
 //mix = mixer(mixLevel, s1, s2);
 
-function addSong(event){
-  //var addButton = document.getElementById('add-song');
-  var addSongContainer = addButton.parentNode.parentNode;
-  if(addSongContainer.classList.contains('left')){
-    console.log("this happened");
-    var title = getElementById('titleleft');
-    var artist = getElementById('artistleft');
-    s1.push({
-      title: title,
-      artist: artist
-    })
-    addSongContainer.removeChild(addSongContainer.lastChild);
-    var playlistHTML = Handlebars.templates.playListTemplate(s1)
-    addSongContainer.insertAdjacentHTML('beforeend', playlistHTML);
-  }else if(addSongContainer.classList.contains('right')){
-    var title = getElementById('titleright');
-    var artist = getElementById('artistright');
-    s2.push({
-      title: title,
-      artist: artist
-    })
-    addSongContainer.removeChild(addSongContainer.lastChild);
-    var playlistHTML = Handlebars.templates.playListTemplate(s2)
-    addSongContainer.insertAdjacentHTML('beforeend', playlistHTML);
-
-  }
+function addSong1(){
+  var addSongContainer = document.getElementsByClassName('left');
+  var title = document.getElementsByClassName('titleleft')[0].value;
+  var artist = document.getElementsByClassName('artistleft')[0].value;
+  s1.push({
+    title: title,
+    artist: artist
+  });
+  var holder =
+    {
+      playListName: 'Playlist 1',
+      list: s1
+    };
+  addSongContainer[0].lastElementChild.remove();//  addSongContainer[0].removeChild(addSongContainer[0].lastChild);
+  var playlistHTML = Handlebars.templates.playListTemplate(holder);
+  addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
 }
+
+function addSong2(){
+  var addSongContainer = document.getElementsByClassName('right');
+  var title = document.getElementsByClassName('titleright')[0].value;
+  var artist = document.getElementsByClassName('artistright')[0].value;
+  s2.push({
+    title: title,
+    artist: artist
+  });
+  var holder =
+    {
+      playListName: 'Playlist 2',
+      list: s2
+    };
+  addSongContainer[0].lastElementChild.remove();//  addSongContainer[0].removeChild(addSongContainer[0].lastChild);
+  var playlistHTML = Handlebars.templates.playListTemplate(holder);
+  addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
+}
+
+
 
 function mixPlaylists(event){
   var mixLevel = document.getElementById('mix-level').value;
@@ -74,30 +87,35 @@ function mixPlaylists(event){
   //     return;
   //   };
   // });
-  var songListHolder = [
-    {
-      playListName: 'Playlist 1',
-      list: s1
-    },
-    {
-      playListName: 'Playlist 2',
-      list: s2
-    },
+  var holder =
     {
       playListName: 'Playlist Mix!',
       list: mix
-    }
-  ];
-
-  window.location='/playlist/gettingClose';
+    };
+  if(document.body.lastElementChild.classList.contains('saveButton')){
+    document.body.lastElementChild.remove();
+  }
+  if(document.body.lastElementChild.classList.contains('playListBox')){
+    document.body.lastElementChild.remove();
+  }
+  var playlistHTML = Handlebars.templates.playListTemplate(holder);
+  document.body.insertAdjacentHTML('beforeend', playlistHTML);
+  //window.location='/playlist/gettingClose';
+  var saveHTML = Handlebars.templates.saveTemplate();
+  document.body.insertAdjacentHTML('beforeend', saveHTML);
 }
 
 window.addEventListener('DOMContentLoaded', function(){
 
-  var addButton = document.getElementsByClassName('add-song');
-  if(addButton) {
-    console.log('addbutton is working kinda')
-    addButton.addEventListener('click', addSong);
+  var addButtonLeft = document.getElementsByClassName('add-song-left');
+  if(addButtonLeft) {
+    console.log('addbutton is working kinda');
+    addButtonLeft[0].addEventListener('click', addSong1);
+  }
+  var addButtonRight = document.getElementsByClassName('add-song-right');
+  if(addButtonRight) {
+    console.log('addbutton is working kinda');
+    addButtonRight[0].addEventListener('click', addSong2);
   }
 
   var mixButton = document.getElementById('mix-button');
