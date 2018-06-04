@@ -2,6 +2,8 @@ var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
 var songData = require('./songData.json');
+var SpotifyWebApi = require('spotify-web-api-node');
+var spotifyApi = new SpotifyWebApi();
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -38,6 +40,14 @@ app.get('/playlist/:name', function(req, res, next){
     }
   }
 });
+
+//would be cool! 
+// spotifyApi.getPlaylist('Real Music', '3bnO3NRdPFTipU2ZFpl4mw')
+//   .then(function(data) {
+//     console.log('Some information about this playlist', data.body);
+//   }, function(err) {
+//     console.log('Something went wrong!', err);
+//   });
 
 app.use(express.static('public'));
 

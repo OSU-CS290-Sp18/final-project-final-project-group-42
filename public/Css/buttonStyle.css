@@ -17,7 +17,7 @@
   display: block;
   text-decoration: none;
   color: white;
-  background-color: #319df6;
+  background-color: #01579B;
   font-size: 100px;
   padding: 100px 200px;
   margin: none;
@@ -29,5 +29,5 @@
 }
 
 #create-button a:hover{
-  background-color: #1864dd;
+  background-color: #0277BD;
 }
