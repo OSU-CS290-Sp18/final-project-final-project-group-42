@@ -4,6 +4,7 @@
   "description": "Mixes playlist with dank results",
   "main": "server.js",
   "scripts": {
+    "serve": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "handlebars views/mixer.handlebars -f public/templates/mixer.js && handlebars views/partials/createButtonTemplate.handlebars -f public/templates/createButtonTemplate.js && handlebars views/partials/headerTemplate.handlebars -f public/templates/headerTemplate.js && handlebars views/partials/playlistBoxTemplate.handlebars -f public/templates/playlistBoxTemplate.js && handlebars views/errorTemplate.handlebars -f public/templates/errorTemplate.js && handlebars views/partials/songInfoTemplate.handlebars -f public/templates/songInfoTemplate.js && handlebars views/partials/playListTemplate.handlebars -f public/templates/playListTemplate.js && handlebars views/mixerCreateView.handlebars -f public/templates/mixerCreateView.js && handlebars views/mixerHomeView.handlebars -f public/templates/mixerHomeView.js && handlebars views/mixerPlaylistView.handlebars -f public/templates/mixerPlaylistView.js && handlebars views/layouts/main.handlebars -f public/templates/main.js && handlebars views/partials/saveTemplate.handlebars -f public/templates/saveTemplate.js",
     "prestart": "npm run build",
@@ -24,5 +25,7 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.11"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
 }
