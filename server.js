@@ -54,7 +54,7 @@ app.post('/plylist/:name/new', function(req, res, next) {
       return;
     };
   });
-
+  res.status(200).end();
 });
 
 //would be cool!

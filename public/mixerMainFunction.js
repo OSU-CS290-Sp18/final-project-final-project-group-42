@@ -91,34 +91,24 @@ function mixPlaylists(event){
   document.body.insertAdjacentHTML('beforeend', saveHTML);
 }
 
-//add soon
-// var holderSend = JSON.stringify(holder);
-//
-// var request = new XMLHttpRequest();
-// var url = "playlist/" + holder.PlayListName + "/new";
-// request.open("POST", url);
-//
-// request.setRequestHeader('Content-Type', 'application/json')
-// request.send(holderSend);
-//
-// request.addEventListener('load', function (event) {
-//   if(event.target.status === 200) {
-//     if(document.body.lastElementChild.classList.contains('saveButton')){
-//       document.body.lastElementChild.remove();
-//     }
-//     if(document.body.lastElementChild.classList.contains('playListBox')){
-//       document.body.lastElementChild.remove();
-//     }
-//     var playlistHTML = Handlebars.templates.playListTemplate(holder);
-//     document.body.insertAdjacentHTML('beforeend', playlistHTML);
-//     //window.location='/playlist/gettingClose';
-//     var saveHTML = Handlebars.templates.saveTemplate();
-//     document.body.insertAdjacentHTML('beforeend', saveHTML);
-//   }else {
-//     alert("Error: ", + event.target.response);
-//   }
-// });
+function savePlaylists(){
+  var holderSend = JSON.stringify(holder);
 
+  var request = new XMLHttpRequest();
+  var url = "playlist/" + holder.PlayListName + "/new";
+  request.open("POST", url);
+
+  request.setRequestHeader('Content-Type', 'application/json')
+  request.send(holderSend);
+
+  request.addEventListener('click', function (event) {
+    if(event.target.status === 200) {
+        window.location= '/playlist/' + holder.PlaylistName;
+    }else {
+      alert("Error: ", + event.target.response);
+    }
+  });
+}
 
 window.addEventListener('DOMContentLoaded', function(){
   var addButtonLeft = document.getElementsByClassName('add-song-left');
