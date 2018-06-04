@@ -1,18 +1,12 @@
+body{
+    background-color: #E2FAFF;
+    margin: 0px 0px 0px 0px;
+}
 
 header {
 
     background-color: blue;
 
-}
-
-/* a{
-
-   text-decoration: none;
-   color: white;
-} */
-
-body{
-    margin: 0px 0px 0px 0px;
 }
 
 .Nitem{
@@ -112,6 +106,7 @@ body{
 .playListBox {
   border: black solid 1px;
   background-color: #a3c1f0;
+  color: white;
 }
 
 .playlistBox{
@@ -129,9 +124,9 @@ body{
     border: none;
     border-radius: 10px;
     color: white;
-    font-size: 10px;
+    font-size: 20px;
     height: 50px;
-    width: 50px;
+    width: 150px;
     box-shadow: 2px 2px 10px grey;
 }
 
@@ -158,19 +153,88 @@ body{
 
 }
 
-.add-song-info{
-     margin-left: 29%;
-
-}
-
 .playlist{
      background-color: blue;
      margin: auto;
      width: 50%;
      padding: 10px;
      font-size: 15px;
+     color: black;
 }
 
-.add-songs-container {
-  display: inline-block;
+
+.mixT=-title{
+   background-color: #a3c1f0;   
+   padding-left: 20%
 }
+
+.mix{
+    margin-top: 0px;
+    background-color: #a3c1f0;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+}
+
+.add-song-info{
+   text-align: center;
+  
+}
+
+.add-songs-container{
+    background-color: blue;
+    color: white;
+       
+}
+
+.mix-song-adders{
+    display: flex;
+    justify-content: center;   
+}
+
+
+.left{
+    padding: 0% 3% 0% 40%;
+
+}
+
+.right{
+    padding: 0% 40% 0% 3%;
+}
+
+.mix-playlists{
+  padding-top: 5%;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mix-button{
+    background-color: #319df6;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px grey;
+}
+
+#mix-button:hover{
+    cursor: pointer;
+    background-color: #1864dd;
+}
+
+.saveButton{
+    background-color: #319df6;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-size: 20px;
+    box-shadow: 2px 2px 10px grey;
+    margin-left:2%;
+}
+
+.saveButton:hover{
+    cursor: pointer;
+    background-color: #1864dd;
+}
+

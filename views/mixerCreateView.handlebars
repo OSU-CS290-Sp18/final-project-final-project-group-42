@@ -8,12 +8,14 @@
     <option value="5">5</option>
   </select>
 </div>
-  {{#each playlists}}
-   <div class="add-songs-container {{side}}">
-     {{>songInfoTemplate}}
-     {{>playListTemplate}}
-   </div>
-   {{/each}}
+    <div class = "mix-song-adders">  
+       {{#each playlists}}
+          <div class="add-songs-container {{side}}">
+             {{>songInfoTemplate}}
+             {{>playListTemplate}}
+          </div>
+       {{/each}}
+    </div>
 </div>
 
 <div class="mix-playlists">
