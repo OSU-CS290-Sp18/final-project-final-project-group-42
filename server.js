@@ -4,12 +4,15 @@ var exphbs = require('express-handlebars');
 var songData = require('./songData.json');
 var SpotifyWebApi = require('spotify-web-api-node');
 var spotifyApi = new SpotifyWebApi();
+var bodyParser = require('body-parser');
 
 var app = express();
 var port = process.env.PORT || 3000;
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+
+app.use(bodyParser.json());
 
 app.get('/', function(req, res, next){
     res.status(200);
@@ -41,7 +44,20 @@ app.get('/playlist/:name', function(req, res, next){
   }
 });
 
-//would be cool! 
+app.post('/plylist/:name/new', function(req, res, next) {
+  var name = req.params.name;
+  //check format
+  songData.push(req.body.holderSend);
+  fs.writeFile('./songData.json', JSON.stringify(songData), (err) => {
+    if(err) {
+      console.error(err);
+      return;
+    };
+  });
+
+});
+
+//would be cool!
 // spotifyApi.getPlaylist('Real Music', '3bnO3NRdPFTipU2ZFpl4mw')
 //   .then(function(data) {
 //     console.log('Some information about this playlist', data.body);
