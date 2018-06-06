@@ -81,7 +81,7 @@ function mixPlaylists(event){
       subPlaylistName: 'Playlist Mix!',
       list: mix
     };
-  songData = [{
+  songData = { Demo: {
     mixTitle: "Demo",
     mixLists: [{
       subPlaylistName: 'Playlist 1',
@@ -95,7 +95,7 @@ function mixPlaylists(event){
       subPlaylistName: 'Playlist Mix!',
       list: mix
     }]
-  }];
+  }};
   if(document.body.lastElementChild.classList.contains('saveButton')){
     document.body.lastElementChild.remove();
   }
@@ -122,16 +122,10 @@ function mixPlaylists(event){
 }
 
 function savePlaylists(event){
-  // var songData = {
-  //   title: "Demo",
-  //   lists: tempData
-  // }
   var dataSend = JSON.stringify(songData);
-  console.log("holderSend:",  songData);
-  console.log("Title:",  songData[0].mixTitle);
 
   var request = new XMLHttpRequest();
-  var url = "playlist/" + songData[0].mixTitle + "/new";
+  var url = "playlist/" + songData["Demo"].mixTitle + "/new";
   request.open("POST", url);
 
   request.setRequestHeader('Content-Type', 'application/json')
@@ -139,10 +133,7 @@ function savePlaylists(event){
 
   request.addEventListener('load', function (event) {
     if(event.target.status === 200) {
-      // setTimeout(function() {
-      //   window.location.href = '/playlist/' + songData[0].title;
-      // }, 2000);
-      window.location= '/playlist/' + songData[0].mixTitle;
+      window.location= '/playlist/' + songData["Demo"].mixTitle;
     }else {
       alert("Error: ", + event.target.response);
     }
@@ -165,10 +156,4 @@ window.addEventListener('DOMContentLoaded', function(){
   if(mixButton){
     mixButton.addEventListener('click', mixPlaylists);
   }
-  // var saveButton = document.getElementsByClassName('saveButton');
-  // console.log("SaveButton:",saveButton);
-  // if(saveButton){
-  //   console.log("saveButton Click??")
-  //   saveButton.addEventListener('click', savePlaylists);
-  // }
 });
