@@ -45,7 +45,7 @@ function addSong1(){
   });
   var holder =
     {
-      playListName: 'Playlist 1',
+      subPlaylistName: 'Playlist 1',
       list: s1
     };
   //tempData.push(holder);
@@ -64,7 +64,7 @@ function addSong2(){
   });
   var holder =
     {
-      playListName: 'Playlist 2',
+      subPlaylistName: 'Playlist 2',
       list: s2
     };
   //tempData.push(holder);
@@ -78,21 +78,21 @@ function mixPlaylists(event){
   mix = mixer(mixLevel, s1, s2);
   var holder =
     {
-      playListName: 'Playlist Mix!',
+      subPlaylistName: 'Playlist Mix!',
       list: mix
     };
   songData = [{
-    title: "Demo",
-    lists: [{
-      playListName: 'Playlist 1',
+    mixTitle: "Demo",
+    mixLists: [{
+      subPlaylistName: 'Playlist 1',
       list: s1
     },
     {
-      playListName: 'Playlist 2',
+      subPlaylistName: 'Playlist 2',
       list: s2
     },
     {
-      playListName: 'Playlist Mix!',
+      subPlaylistName: 'Playlist Mix!',
       list: mix
     }]
   }];
@@ -128,21 +128,21 @@ function savePlaylists(event){
   // }
   var dataSend = JSON.stringify(songData);
   console.log("holderSend:",  songData);
-  console.log("Title:",  songData[0].title);
+  console.log("Title:",  songData[0].mixTitle);
 
   var request = new XMLHttpRequest();
-  var url = "playlist/" + songData[0].title + "/new";
+  var url = "playlist/" + songData[0].mixTitle + "/new";
   request.open("POST", url);
 
   request.setRequestHeader('Content-Type', 'application/json')
   request.send(dataSend);
 
-  request.addEventListener('click', function (event) {
+  request.addEventListener('load', function (event) {
     if(event.target.status === 200) {
       // setTimeout(function() {
       //   window.location.href = '/playlist/' + songData[0].title;
       // }, 2000);
-      window.location= '/playlist/' + songData[0].title;
+      window.location= '/playlist/' + songData[0].mixTitle;
     }else {
       alert("Error: ", + event.target.response);
     }
@@ -151,12 +151,13 @@ function savePlaylists(event){
 
 window.addEventListener('DOMContentLoaded', function(){
   var addButtonLeft = document.getElementsByClassName('add-song-left');
-  if(addButtonLeft) {
+  console.log(addButtonLeft);
+  if(addButtonLeft.length != 0) {
     console.log('addbutton is working kinda');
     addButtonLeft[0].addEventListener('click', addSong1);
   }
   var addButtonRight = document.getElementsByClassName('add-song-right');
-  if(addButtonRight) {
+  if(addButtonRight.length != 0) {
     console.log('addbutton is working kinda');
     addButtonRight[0].addEventListener('click', addSong2);
   }

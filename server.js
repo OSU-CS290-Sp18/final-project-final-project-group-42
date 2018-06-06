@@ -3,7 +3,8 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var songData = require('./songData.json');
 var SpotifyWebApi = require('spotify-web-api-node');
-var spotifyApi = new SpotifyWebApi();
+var fs = require('fs');
+//var spotifyApi = new SpotifyWebApi();
 var bodyParser = require('body-parser');
 
 var app = express();
@@ -34,12 +35,18 @@ app.get('/newPlaylist', function(req, res, next){
 app.get('/playlist/:name', function(req, res, next){
   var name = req.params.name;
   res.status(200);
+  console.log(songData);
+  var check = 0;
   for(var i = 0; i < songData.length; i++){
-    if(songData[i].title == name){
+    if(songData[i].mixTitle == name){
       res.render('mixerPlaylistView', {
         title: name,
-        playlist: songData[i].mixData
+        playlist: songData[i].mixLists
       });
+      check = 1;
+    }
+     if(i == songData.length - 1 && check != 1){
+       next();
     }
   }
 });
@@ -47,7 +54,16 @@ app.get('/playlist/:name', function(req, res, next){
 app.post('/playlist/:name/new', function(req, res, next) {
   var name = req.params.name;
   //check format
-  songData.push(req.body.sendData);
+  console.log("Before:", songData);
+  var newData = req.body.sendData;
+  var song2 = [{
+    songData,
+    newData
+  }];
+  song2.push(req.body.sendData);
+  // songData[mixTitle] = JSON.parse(req.body.sendData.mixTitle);
+  // songData[mixTitle] = JSON.parse(req.body.sendData.mixLists);
+  console.log("After:", song2);
   fs.writeFile('./songData.json', JSON.stringify(songData), (err) => {
     if(err) {
       console.error(err);
