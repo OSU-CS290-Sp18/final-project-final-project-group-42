@@ -239,3 +239,8 @@ header {
     cursor: pointer;
     background-color: #1864dd;
 }
+
+
+.hidden {
+  display: none;
+}

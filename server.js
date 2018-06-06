@@ -35,7 +35,7 @@ app.get('/playlist/:name', function(req, res, next){
   var name = req.params.name;
   res.status(200);
   for(var i = 0; i < songData.length; i++){
-    if(songData[i].mixTitle == name){
+    if(songData[i].title == name){
       res.render('mixerPlaylistView', {
         title: name,
         playlist: songData[i].mixData
@@ -44,10 +44,10 @@ app.get('/playlist/:name', function(req, res, next){
   }
 });
 
-app.post('/plylist/:name/new', function(req, res, next) {
+app.post('/playlist/:name/new', function(req, res, next) {
   var name = req.params.name;
   //check format
-  songData.push(req.body.holderSend);
+  songData.push(req.body.sendData);
   fs.writeFile('./songData.json', JSON.stringify(songData), (err) => {
     if(err) {
       console.error(err);

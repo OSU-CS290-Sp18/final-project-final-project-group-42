@@ -1,6 +1,8 @@
-var mix = [{playlistTitle: 'Playlist Mix', songs: {}}];
+var mix = [];
 var s1 = [];
 var s2 = [];
+var songData = [];
+var tempData = [];
 
 //mixes the playlists
 function mixer(mixLevel, s1, s2){
@@ -46,6 +48,7 @@ function addSong1(){
       playListName: 'Playlist 1',
       list: s1
     };
+  //tempData.push(holder);
   addSongContainer[0].lastElementChild.remove();//  addSongContainer[0].removeChild(addSongContainer[0].lastChild);
   var playlistHTML = Handlebars.templates.playListTemplate(holder);
   addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
@@ -64,6 +67,7 @@ function addSong2(){
       playListName: 'Playlist 2',
       list: s2
     };
+  //tempData.push(holder);
   addSongContainer[0].lastElementChild.remove();
   var playlistHTML = Handlebars.templates.playListTemplate(holder);
   addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
@@ -77,7 +81,21 @@ function mixPlaylists(event){
       playListName: 'Playlist Mix!',
       list: mix
     };
-
+  songData = [{
+    title: "Demo",
+    lists: [{
+      playListName: 'Playlist 1',
+      list: s1
+    },
+    {
+      playListName: 'Playlist 2',
+      list: s2
+    },
+    {
+      playListName: 'Playlist Mix!',
+      list: mix
+    }]
+  }];
   if(document.body.lastElementChild.classList.contains('saveButton')){
     document.body.lastElementChild.remove();
   }
@@ -87,23 +105,44 @@ function mixPlaylists(event){
   var playlistHTML = Handlebars.templates.playListTemplate(holder);
   document.body.insertAdjacentHTML('beforeend', playlistHTML);
   //window.location='/playlist/gettingClose';
+
+  //var save = document.getElementsByClassName('saveButton');
+  //console.log(save[0]);
+  //saveButton.classList.remove('hidden');
   var saveHTML = Handlebars.templates.saveTemplate();
   document.body.insertAdjacentHTML('beforeend', saveHTML);
+
+  saveButton = document.getElementById('saveButton');
+  var saveButton = document.getElementsByClassName('saveButton');
+  console.log("Save Button:", saveButton);
+  if(saveButton){
+    console.log("saveButton Click??")
+    saveButton[0].addEventListener('click', savePlaylists);
+  }
 }
 
-function savePlaylists(){
-  var holderSend = JSON.stringify(holder);
+function savePlaylists(event){
+  // var songData = {
+  //   title: "Demo",
+  //   lists: tempData
+  // }
+  var dataSend = JSON.stringify(songData);
+  console.log("holderSend:",  songData);
+  console.log("Title:",  songData[0].title);
 
   var request = new XMLHttpRequest();
-  var url = "playlist/" + holder.PlayListName + "/new";
+  var url = "playlist/" + songData[0].title + "/new";
   request.open("POST", url);
 
   request.setRequestHeader('Content-Type', 'application/json')
-  request.send(holderSend);
+  request.send(dataSend);
 
   request.addEventListener('click', function (event) {
     if(event.target.status === 200) {
-        window.location= '/playlist/' + holder.PlaylistName;
+      // setTimeout(function() {
+      //   window.location.href = '/playlist/' + songData[0].title;
+      // }, 2000);
+      window.location= '/playlist/' + songData[0].title;
     }else {
       alert("Error: ", + event.target.response);
     }
@@ -125,8 +164,10 @@ window.addEventListener('DOMContentLoaded', function(){
   if(mixButton){
     mixButton.addEventListener('click', mixPlaylists);
   }
-  var saveButton = document.getElementById('saveButton');
-  if(saveButton){
-    saveButton.addEventListener('click', savePlaylists);
-  }
+  // var saveButton = document.getElementsByClassName('saveButton');
+  // console.log("SaveButton:",saveButton);
+  // if(saveButton){
+  //   console.log("saveButton Click??")
+  //   saveButton.addEventListener('click', savePlaylists);
+  // }
 });
