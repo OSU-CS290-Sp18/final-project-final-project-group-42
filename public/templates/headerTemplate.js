@@ -1,11 +1,7 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['headerTemplate'] = template({"1":function(container,depth0,helpers,partials,data) {
-<<<<<<< HEAD
     return "          <li class=\"Nitem navbar-search\">\n            <input type=\"text\" id=\"navbar-search-input\" placeholder=\"Input here to search\">\n            <button type=\"button\" id=\"Mixer-Search\"><i class=\"fas fa-search\"></i></button>\n          </li>\n";
-=======
-    return "          <li class=\"Nitem navbar-search\">\r\n            <input type=\"text\" id=\"navbar-search-input\" placeholder=\"Input here to search\">\r\n            <button type=\"button\" id=\"Mixer-Search\"><i class=\"fas fa-search\"></i></button>\r\n          </li>\r\n";
->>>>>>> df8662c3c02a186bb35f1290d64281a5137696b4
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
