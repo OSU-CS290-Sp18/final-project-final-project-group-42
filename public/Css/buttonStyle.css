@@ -1,8 +1,8 @@
 .createbutton{
-<<<<<<< HEAD
- padding: 10% 12% 10% 10%;
-=======
-  padding: 0px;
+/* <<<<<<< HEAD */
+ /* padding: 10% 12% 10% 10%; */
+/* ======= */
+   padding: 0px; */
   /* 10% 10% 10% 20%; */
   /* padding: 100px 100px 100px 200px;*/
 }
@@ -14,7 +14,7 @@
   outline: none
   /* 100px 100px 100px 200px; */
   /* padding: 10% 10% 10% 20%; */
->>>>>>> 2a8b5fc3143e197f08c2ced76384496951e237ff
+/* >>>>>>> 2a8b5fc3143e197f08c2ced76384496951e237ff */ */
 }
 
 #create-button a{
