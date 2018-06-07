@@ -1,22 +1,38 @@
 .createbutton{
+<<<<<<< HEAD
  padding: 10% 12% 10% 10%;
+=======
+  padding: 0px;
+  /* 10% 10% 10% 20%; */
+  /* padding: 100px 100px 100px 200px;*/
+}
+
+#create-button {
+  border: none;
+  background: none;
+  padding: 5% 10%;
+  outline: none
+  /* 100px 100px 100px 200px; */
+  /* padding: 10% 10% 10% 20%; */
+>>>>>>> 2a8b5fc3143e197f08c2ced76384496951e237ff
 }
 
 #create-button a{
+  font-family: sans-serif;
   display: block;
   text-decoration: none;
   color: white;
-  background-color: #319df6;
+  background-color: #01579B;
   font-size: 100px;
-  padding: 100px 400px;
+  padding: 100px 200px;
   margin: none;
   shape-outside: none;
   cursor: pointer;
-  box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
   border: none;
   border-radius: 10px;
 }
 
 #create-button a:hover{
-  background-color: #1864dd;
+  background-color: #0277BD;
 }
