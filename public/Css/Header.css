@@ -1,3 +1,4 @@
+
 body{
     font-family: Roboto, Helvetica, sans-serif;
     background-color: #E2FAFF;
@@ -188,12 +189,22 @@ header {
 
 
 .mixTitle{
+<<<<<<< HEAD
    background-color: #a3c1f0;
+=======
+   background-color: #a3c1f0;   
+>>>>>>> df8662c3c02a186bb35f1290d64281a5137696b4
    padding: 2% 0% 2% 3%;
    margin-top: 0;
    color: white;
    font-size: 30px;
+<<<<<<< HEAD
    padding-left: 20%
+=======
+   background-color: #a3c1f0;
+   padding-left: 20%
+
+>>>>>>> df8662c3c02a186bb35f1290d64281a5137696b4
 }
 
 .mix{
@@ -212,12 +223,14 @@ header {
 .add-songs-container{
     background-color: #01579B;
     color: white;
+    padding: 20px;
 
 }
 
 .mix-song-adders{
     display: flex;
     justify-content: center;
+<<<<<<< HEAD
     width: 100%;
 }
 
@@ -225,11 +238,12 @@ header {
 .left{
     padding: 0% 3% 0% 40%;
 
+=======
+    background-color: #01579B;   
+    width: 100%; 
+>>>>>>> df8662c3c02a186bb35f1290d64281a5137696b4
 }
 
-.right{
-    padding: 0% 40% 0% 3%;
-}
 
 .mix-playlists{
   padding-top: 5%;

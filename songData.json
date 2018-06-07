@@ -1,1 +1,91 @@
+<<<<<<< HEAD
 {"Demo_Mix":{"mixTitle":"Demo_Mix","mixLists":[{"playListName":"Playlist 1","list":[{"title":"All Star","artist":"Smash Mouth"},{"title":"Africa","artist":"Toto"},{"title":"Who Let the Dogs Out","artist":"The Baha Men"},{"title":"Gormet Race","artist":"Kirbert"},{"title":"Tots","artist":"Mots"},{"title":"TUBTHUMPING","artist":"CHUBAWUMBA"}]},{"playListName":"Playlist 2","list":[{"title":"Arms Wide Open","artist":"Creed"},{"title":"How You Remind Me","artist":"Nickleback"},{"title":"The Reason","artist":"Hoobastak"},{"title":"Iris","artist":"The Goo Goo Dolls"},{"title":"Nookie","artist":"Limp Biskit"},{"title":"All Star","artist":"Guy Feiri"}]},{"playListName":"Playlist Mix!","list":[{"title":"All Star","artist":"Smash Mouth"},{"title":"Arms Wide Open","artist":"Creed"},{"title":"Africa","artist":"Toto"},{"title":"How You Remind Me","artist":"Nickleback"},{"title":"Who Let the Dogs Out","artist":"The Baha Men"},{"title":"The Reason","artist":"Hoobastak"},{"title":"Gormet Race","artist":"Kirbert"},{"title":"Iris","artist":"The Goo Goo Dolls"},{"title":"Tots","artist":"Mots"},{"title":"Nookie","artist":"Limp Biskit"},{"title":"TUBTHUMPING","artist":"CHUBAWUMBA"},{"title":"All Star","artist":"Guy Feiri"}]}]}}
+=======
+{
+	"Demo_Mix": {
+		"mixTitle": "Demo_Mix",
+		"mixLists": [{
+			"playListName": "Playlist 1",
+			"list": [{
+				"title": "All Star",
+				"artist": "Smash Mouth"
+			}, {
+				"title": "Africa",
+				"artist": "Toto"
+			}, {
+				"title": "Who Let the Dogs Out",
+				"artist": "The Baha Men"
+			}, {
+				"title": "Gormet Race",
+				"artist": "Kirbert"
+			}, {
+				"title": "Tots",
+				"artist": "Mots"
+			}, {
+				"title": "TUBTHUMPING",
+				"artist": "CHUBAWUMBA"
+			}]
+		}, {
+			"playListName": "Playlist 2",
+			"list": [{
+				"title": "Arms Wide Open",
+				"artist": "Creed"
+			}, {
+				"title": "How You Remind Me",
+				"artist": "Nickleback"
+			}, {
+				"title": "The Reason",
+				"artist": "Hoobastak"
+			}, {
+				"title": "Iris",
+				"artist": "The Goo Goo Dolls"
+			}, {
+				"title": "Nookie",
+				"artist": "Limp Biskit"
+			}, {
+				"title": "All Star",
+				"artist": "Guy Feiri"
+			}]
+		}, {
+			"playListName": "Playlist Mix!",
+			"list": [{
+				"title": "All Star",
+				"artist": "Smash Mouth"
+			}, {
+				"title": "Arms Wide Open",
+				"artist": "Creed"
+			}, {
+				"title": "Africa",
+				"artist": "Toto"
+			}, {
+				"title": "How You Remind Me",
+				"artist": "Nickleback"
+			}, {
+				"title": "Who Let the Dogs Out",
+				"artist": "The Baha Men"
+			}, {
+				"title": "The Reason",
+				"artist": "Hoobastak"
+			}, {
+				"title": "Gormet Race",
+				"artist": "Kirbert"
+			}, {
+				"title": "Iris",
+				"artist": "The Goo Goo Dolls"
+			}, {
+				"title": "Tots",
+				"artist": "Mots"
+			}, {
+				"title": "Nookie",
+				"artist": "Limp Biskit"
+			}, {
+				"title": "TUBTHUMPING",
+				"artist": "CHUBAWUMBA"
+			}, {
+				"title": "All Star",
+				"artist": "Guy Feiri"
+			}]
+		}]
+	}
+}
+>>>>>>> df8662c3c02a186bb35f1290d64281a5137696b4
