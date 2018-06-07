@@ -5,8 +5,8 @@ var songData = {};
 var tempData = [];
 var newName;
 var allPlaylists = [];
-//var searchButton = document.getElementById('Mixer-Search');
-//var searchInput = document.getElementById('navbar-search-input');
+var searchButton = document.getElementById('Mixer-Search');
+var searchInput = document.getElementById('navbar-search-input');
 
 //mixes the playlists
 function mixer(mixLevel, s1, s2){
@@ -220,17 +220,17 @@ window.addEventListener('DOMContentLoaded', function(){
   // }
 });
 
-// searchButton.addEventListener('click', function(){
-//   var i, filter, a;
-//   filter = searchInput.value.toUpperCase();
-//   var playlists = document.querySelectorAll('.playlistBoxContainer');
-//   for(i = 0; i<playlists.length; i++){
-//     a = playlists[i].getElementsByTagName("a")[0];
-//     if(a.innerHTML.toUpperCase().indexOf(filter)>-1){
-//       playlists[i].style.display = "";
-//     }
-//     else{
-//       playlists[i].style.display = "none";
-//     }
-//   }
-// });
+searchButton.addEventListener('click', function(){
+  var i, filter, a;
+  filter = searchInput.value.toUpperCase();
+  var playlists = document.querySelectorAll('.playlistBoxContainer');
+  for(i = 0; i<playlists.length; i++){
+    a = playlists[i].getElementsByTagName("a")[0];
+    if(a.innerHTML.toUpperCase().indexOf(filter)>-1){
+      playlists[i].style.display = "";
+    }
+    else{
+      playlists[i].style.display = "none";
+    }
+  }
+});
