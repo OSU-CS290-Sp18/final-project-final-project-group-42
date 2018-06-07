@@ -60,12 +60,17 @@ header {
     border: none;
     border-radius: 10%;
     color: white;
-    padding: 12px;
+    /* padding: 12px; */
+    padding-top: 10px;
+    padding-bottom: 26px;
+    padding-left: 12px;
+    padding-right: 26px;
     text-align: center;
     display: inline-block;
     font-size: 10px;
     height: 10px;
     width: 10px;
+    font-size: 15px;
     /* box-shadow: 2px 2px 10px grey; */
 }
 
@@ -75,16 +80,23 @@ header {
     border: none;
     border-radius: 10%;
     color: white;
-    padding: 12px;
+    /* padding: 12px; */
+    padding-top: 10px;
+    padding-bottom: 25px;
+    padding-left: 12px;
+    padding-right: 25px;
     text-align: center;
     display: inline-block;
     font-size: 10px;
     height: 10px;
     width: 10px;
     box-shadow: 2px 2px 10px grey;
+    font-size: 15px;
 }
 
-
+#Mixer-Search:focus{
+  outline: none;
+}
 
 .playlistsTitle{
    background-color: #01579B;
