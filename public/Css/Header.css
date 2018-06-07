@@ -163,9 +163,12 @@ header {
 }
 
 
-.mixT=-title{
+.mixTitle{
    background-color: #a3c1f0;   
-   padding-left: 20%
+   padding: 2% 0% 2% 3%;
+   margin-top: 0;
+   color: white;
+   font-size: 30px;
 }
 
 .mix{
@@ -189,7 +192,8 @@ header {
 
 .mix-song-adders{
     display: flex;
-    justify-content: center;   
+    justify-content: center;  
+    width: 100%; 
 }
 
 
