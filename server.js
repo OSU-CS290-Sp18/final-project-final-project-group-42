@@ -49,14 +49,15 @@ app.get('/playlist/:name', function(req, res, next){
 app.post('/playlist/:name/new', function(req, res, next) {
   var name = req.params.name;
   var newData = req.body;
+  songData[newData.mixTitle] = newData;
   songData = JSON.stringify(songData);//.slice(0, -1) + ",\n" + JSON.stringify(newData).slice(1);
   fs.writeFile('./songData.json', songData, function(err){
     if(err) {
       console.error(err);
       return;
-    }else{
+    }//else{
       res.status(200).end();
-    };
+    //};
   });
 
  });

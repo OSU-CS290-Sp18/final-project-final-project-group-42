@@ -1,7 +1,7 @@
 var mix = [];
 var s1 = [];
 var s2 = [];
-var songData = {};
+var songData = [];
 var tempData = [];
 var newName;
 var allPlaylists = [];
@@ -87,7 +87,7 @@ function mixPlaylists(event){
     };
   newName = document.getElementsByClassName('name-playlist')[0].value;
   console.log("Name:", newName);
-  songData[newName] = {
+  songData = {
     mixTitle: newName,
     mixLists: [{
       subPlaylistName: 'Playlist 1',
@@ -132,7 +132,7 @@ function savePlaylists(event){
   var dataSend = JSON.stringify(songData);
 
   var request = new XMLHttpRequest();
-  var url = "playlist/" + songData[newName].mixTitle + "/new";
+  var url = "playlist/" + songData.mixTitle + "/new";
   request.open("POST", url);
 
   request.setRequestHeader('Content-Type', 'application/json')
@@ -140,7 +140,7 @@ function savePlaylists(event){
 
   request.addEventListener('load', function (event) {
     if(event.target.status === 200) {
-      window.location.href = '/playlist/' + songData[newName].mixTitle;
+      window.location.href = '/playlist/' + songData.mixTitle;
     }else {
       alert("Error: ", + event.target.response);
     }
@@ -220,17 +220,17 @@ window.addEventListener('DOMContentLoaded', function(){
   // }
 });
 
-searchButton.addEventListener('click', function(){
-  var i, filter, a;
-  filter = searchInput.value.toUpperCase();
-  var playlists = document.querySelectorAll('.playlistBoxContainer');
-  for(i = 0; i<playlists.length; i++){
-    a = playlists[i].getElementsByTagName("a")[0];
-    if(a.innerHTML.toUpperCase().indexOf(filter)>-1){
-      playlists[i].style.display = "";
-    }
-    else{
-      playlists[i].style.display = "none";
-    }
-  }
-});
+// searchButton.addEventListener('click', function(){
+//   var i, filter, a;
+//   filter = searchInput.value.toUpperCase();
+//   var playlists = document.querySelectorAll('.playlistBoxContainer');
+//   for(i = 0; i<playlists.length; i++){
+//     a = playlists[i].getElementsByTagName("a")[0];
+//     if(a.innerHTML.toUpperCase().indexOf(filter)>-1){
+//       playlists[i].style.display = "";
+//     }
+//     else{
+//       playlists[i].style.display = "none";
+//     }
+//   }
+// });
