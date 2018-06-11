@@ -111,11 +111,6 @@ function mixPlaylists(event){
   }
   var playlistHTML = Handlebars.templates.playListTemplate(holder);
   document.body.insertAdjacentHTML('beforeend', playlistHTML);
-  //window.location='/playlist/gettingClose';
-
-  //var save = document.getElementsByClassName('saveButton');
-  //console.log(save[0]);
-  //saveButton.classList.remove('hidden');
   var saveHTML = Handlebars.templates.saveTemplate();
   document.body.insertAdjacentHTML('beforeend', saveHTML);
 
@@ -139,7 +134,7 @@ function savePlaylists(event){
   request.send(dataSend);
 
   request.addEventListener('load', function (event) {
-    if(event.target.status === 200) {
+    if(event.target.status === 200 ) {
       window.location.href = '/playlist/' + songData.mixTitle;
     }else {
       alert("Error: ", + event.target.response);

@@ -2,7 +2,7 @@ var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
 var songData = require('./songData.json');
-var SpotifyWebApi = require('spotify-web-api-node');
+//var SpotifyWebApi = require('spotify-web-api-node');
 var fs = require('fs');
 //var spotifyApi = new SpotifyWebApi();
 var bodyParser = require('body-parser');
@@ -63,7 +63,7 @@ app.post('/playlist/:name/new', function(req, res, next) {
  });
 
 //would be cool!
-// spotifyApi.getPlaylist('Real Music', '3bnO3NRdPFTipU2ZFpl4mw')
+// spotifyApi.getPlaylist('Real Music', '')
 //   .then(function(data) {
 //     console.log('Some information about this playlist', data.body);
 //   }, function(err) {
