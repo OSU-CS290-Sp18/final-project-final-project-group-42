@@ -261,22 +261,27 @@ header {
     display: flex;
     justify-content: center;
     width: 100%;
+    background-color: #01579B;
 }
 
 .title-list {
   /* display: inline-block; */
-  /* font-size: 18px; */
-  display: block;
-  min-width: 180px;
-  float: left;
+     display: block;
+     float: left;
+ /* font-size: 18px; 
+   display: flex;
+  align-items: left;
+  justify-content: left;
+  min-width: 180px;*/
 
 }
+
 .artist-list {
   /* white-space:nowrap; */
 
   /* margin-left: 10px; */
-  /* display: inline; */
-  /* float: right; */
+  /* display: inline;*/ 
+  text-align: right;
   color: black;
 }
 
@@ -290,7 +295,7 @@ header {
   padding: 0% 3% 0% 40%;
   background-color: #01579B;
   width: 100%;
-} */
+} 
 
 
 .left{
@@ -302,7 +307,7 @@ header {
     padding: 0% 40% 0% 3%;
 }
 
-
+*/
 .mix-playlists{
   padding-top: 5%;
   display: flex;
@@ -342,4 +347,11 @@ header {
 
 .hidden {
   display: none;
+}
+
+.name-playlist-containter{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
 }
