@@ -393,3 +393,12 @@ header {
    align-items: center;
    justify-content: center;
 }
+
+.Error{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color:#1864dd;
+   color: white;
+   font-size: 40px;
+}
