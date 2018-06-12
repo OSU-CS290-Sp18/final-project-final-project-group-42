@@ -263,6 +263,22 @@ header {
     width: 100%;
 }
 
+.title-list {
+  /* display: inline-block; */
+  /* font-size: 18px; */
+  display: block;
+  min-width: 180px;
+  float: left;
+
+}
+.artist-list {
+  /* white-space:nowrap; */
+
+  /* margin-left: 10px; */
+  /* display: inline; */
+  /* float: right; */
+  color: black;
+}
 
 /* .left{
     padding: 0% 3% 0% 40%;
@@ -327,6 +343,3 @@ header {
 .hidden {
   display: none;
 }
-
-
-
