@@ -155,6 +155,7 @@ header {
 }
 
 .playlistBox:hover{
+  cursor: pointer;
   background-color: #0277BD;
   cursor: pointer;
 }
@@ -290,7 +291,7 @@ header {
   /* margin-left: 10px; */
   /* display: inline;*/
   text-align: right;
-  color: black;
+  color: white;
 }
 
 /* .left{
