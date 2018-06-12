@@ -39,6 +39,7 @@ function mixer(mixLevel, s1, s2){
   return mix;
 }
 
+//adds songs to playlist1
 function addSong1(){
   var addSongContainer = document.getElementsByClassName('left');
   var title = document.getElementsByClassName('titleleft')[0].value;
@@ -53,8 +54,7 @@ function addSong1(){
         playListName: 'Playlist 1',
         list: s1
       };
-    //tempData.push(holder);
-    addSongContainer[0].lastElementChild.remove();//  addSongContainer[0].removeChild(addSongContainer[0].lastChild);
+    addSongContainer[0].lastElementChild.remove();
     var playlistHTML = Handlebars.templates.playListTemplate(holder);
     addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
   }else {
@@ -62,6 +62,7 @@ function addSong1(){
   }
 }
 
+//adds songs to playlist 2
 function addSong2(){
   var addSongContainer = document.getElementsByClassName('right');
   var title = document.getElementsByClassName('titleright')[0].value;
@@ -77,7 +78,6 @@ function addSong2(){
         playListName: 'Playlist 2',
         list: s2
       };
-    //tempData.push(holder);
     addSongContainer[0].lastElementChild.remove();
     var playlistHTML = Handlebars.templates.playListTemplate(holder);
     addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
@@ -86,6 +86,7 @@ function addSong2(){
   }
 }
 
+//mixes the two playlists
 function mixPlaylists(event){
   var mixLevel = document.getElementById('mix-level').value;
   mix = mixer(mixLevel, s1, s2);
@@ -136,6 +137,7 @@ function mixPlaylists(event){
   }
 }
 
+//saves the playlists
 function savePlaylists(event){
   var dataSend = JSON.stringify(songData);
 
@@ -155,54 +157,23 @@ function savePlaylists(event){
   });
 }
 
-// function insertNewPlaylist(name){
-//   var params = {playListName: name};
-//   var playListTemplate = Handlebars.templates.playListTemplate(params);
-//   var item = document.querySelector('.playlistBoxContainer');
-//   item.insertAdjacentHTML('beforeend', playListTemplate);
-// }
-//
-// function playlistMatchesQuery(playlist, query){
-//   if(!query){
-//     return true;
-//   }
-//
-//   query = query.trim().toLowerCase();
-//   return(playlist.playListName).toLowerCase().indexOf(query)>=0;
-// }
-//
-// function parsePlaylists(playlistElem){
-//   var playlist = {};
-//
-//   var playlistTitle = playlistElem.querySelector('.playListName a');
-//   playlist.playListName = playlistTitle.textContent.trim();
-//
-//   return playlist;
-// }
-//
-// function searchUpdate(){
-//   var query = document.getElementById('navbar-search-input').value;
-//
-//   var playlistContainer = document.querySelector('.playlistBoxContainer');
-//   if(playlistContainer){
-//     while(playlistContainer.lastChild){
-//       playlistContainer.removeChild(playlistContainer.lastChild);
-//     }
-//   }
-//
-//   allPlayLists.forEach(function (playlist){
-//     if(playlistMatchesQuery(playlist, query)){
-//         insertNewPlaylist(playlist.playListName);
-//     }
-//   });
-//
-// }
+//searches
+function searchBar(event) {
+  var search = event.currentTarget.value.toLowerCase();
+  console.log(event.currentTarget.value);
+  var playlists = document.getElementsByClassName('playlistBox');
+  for(var i = 0; i < playlists.length; i++) {
+    var title = playlists[i].getElementsByTagName("a")[0];
+    console.log("title:", title.textContent);
+    if((title.textContent.toLowerCase().indexOf(search) >= 0)){
+      playlists[i].classList.remove('hidden');
+    }else {
+      playlists[i].classList.add('hidden');
+    }
+  }
+}
 
 window.addEventListener('DOMContentLoaded', function(){
-  // var playlistCollection = document.getElementsByClassName('playListName');
-  // for(var i = 0; i<playlistCollection.length; i++){
-  //   allPlaylists.push(parsePlaylists(playlistCollection[i]));
-  // }
   var addButtonLeft = document.getElementsByClassName('add-song-left');
   console.log(addButtonLeft);
   if(addButtonLeft.length != 0) {
@@ -218,27 +189,8 @@ window.addEventListener('DOMContentLoaded', function(){
   if(mixButton){
     mixButton.addEventListener('click', mixPlaylists);
   }
-  // var searchButton = document.getElementById('Mixer-Search');
-  // if(searchButton){
-  //   searchButton.addEventListener('click', searchUpdate);
-  // }
-  // var searchInput = document.getElementById('navbar-search-input');
-  // if(searchInput){
-  //   searchInput.addEventListener('input', searchUpdate);
-  // }
+  var searchButton = document.getElementById('navbar-search-input');
+  if(searchButton){
+     searchButton.addEventListener('input', searchBar);
+  }
 });
-
-// searchButton.addEventListener('click', function(){
-//   var i, filter, a;
-//   filter = searchInput.value.toUpperCase();
-//   var playlists = document.querySelectorAll('.playlistBoxContainer');
-//   for(i = 0; i<playlists.length; i++){
-//     a = playlists[i].getElementsByTagName("a")[0];
-//     if(a.innerHTML.toUpperCase().indexOf(filter)>-1){
-//       playlists[i].style.display = "";
-//     }
-//     else{
-//       playlists[i].style.display = "none";
-//     }
-//   }
-// });
