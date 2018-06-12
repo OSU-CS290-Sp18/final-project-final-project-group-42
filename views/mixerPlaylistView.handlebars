@@ -1,8 +1,10 @@
 <div class="playlist-container">
   <h2 class='mixTitle'>{{title}}</h2>
-  {{#each playlist}}
-    <div class="playlist">
-      {{>playListTemplate}}
+    <div class="playlist-page-container">
+      {{#each playlist}}
+         <div class="playlist">
+           {{>playListTemplate}}
+         </div>
+      {{/each}}
     </div>
-  {{/each}}
 </div>
