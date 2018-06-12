@@ -202,13 +202,15 @@ header {
      background-color: none;/*#01579B;*/
      border: 10px;
      width: 60%;
-     margin: auto;
+     margin: 3% 6% 0% 6%;
      padding: 10px;
      max-width: 325px;
      font-size: 15px;
      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
+     
 }
 
+/*
 .playlist:first-of-type {
   /* border-radius: 0px 0px 10px 10px; */
   margin-left: 15%;
@@ -221,6 +223,7 @@ header {
   display: block;
   /* border-radius: 0px 0px 10px 10px; */
 }
+*/
 
 .playlist-container {
   /* max-width: 50%; */
@@ -353,5 +356,13 @@ header {
    display: flex;
    align-items: center;
    justify-content: center;
+
+}
+
+.playlist-page-container{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
 
 }
