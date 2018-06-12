@@ -157,6 +157,7 @@ header {
 .playlistBox:hover{
   cursor: pointer;
   background-color: #0277BD;
+  cursor: pointer;
 }
 
 .playLists {
@@ -340,7 +341,7 @@ header {
 .saveButton{
     background-color: #319df6;
     border: none;
-    margin: 0 0 0 0;
+    margin: 0px 0px 0px 0px;
     border-radius: 2px;
     color: white;
     font-size: 20px;
@@ -372,9 +373,10 @@ header {
    align-items: center;
    justify-content: center;
    flex-wrap: wrap;
-<<<<<<< HEAD
 }
-=======
 
+.mixlist-location{
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
->>>>>>> 40c7d2d7bc0d22da16b7b420d9f67531c0bc018c
