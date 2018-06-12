@@ -158,17 +158,20 @@ function search(title) {
   //request.send(dataSend);
 
   var type = 'title';
-  var url = "https://api.spotify.com/v1/search?q=" + title +"&type=" + type;
-  request.open("GET", url);
-  request.withCredentials = true;
-  request.setRequestHeader('Accept', 'application/json');
-  //request.setRequestHeader('Authorization', 'Bearer');
-  //request.setRequestHeader("Access-Control-Allow-Origin", '*');
-  //request.setRequestHeader("Access-Control-Allow-Credentials", true);
+  //"https://api.spotify.com/v1/search
+  var url = {url: "?q=" + title +"&type=" + type};
+  var urlSend =  JSON.stringify(url)
+  request.open("POST", '/search');
+  // request.withCredentials = true;
+  // request.setRequestHeader('Accept', 'application/json');
+  // //request.setRequestHeader('Authorization', 'Bearer');
+  // //request.setRequestHeader("Access-Control-Allow-Origin", '*');
+  // //request.setRequestHeader("Access-Control-Allow-Credentials", true);
+  // request.setRequestHeader('Content-Type', 'application/json');
+  //
   request.setRequestHeader('Content-Type', 'application/json');
-
-
-  request.send();
+  request.send(urlSend);
+  //request.send(title);
   //request.open(null);
   //
   // request.setRequestHeader('Content-Type', 'application/json');
