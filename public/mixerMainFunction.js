@@ -46,6 +46,7 @@ function addSong1(){
   var title = document.getElementsByClassName('titleleft')[0].value;
   var artist = document.getElementsByClassName('artistleft')[0].value;
   if(title != '' && artist != ''){
+    ispress=true;
     s1.push({
       title: title,
       artist: artist
@@ -60,6 +61,7 @@ function addSong1(){
     addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
   }else {
     alert("Please include a title and artist name");
+
   }
 }
 
@@ -70,6 +72,7 @@ function addSong2(){
   var artist = document.getElementsByClassName('artistright')[0].value;
   console.log("title: ", title);
   if(title != '' && artist != ''){
+    ispress=true;
     s2.push({
       title: title,
       artist: artist
@@ -87,10 +90,6 @@ function addSong2(){
   }
 }
 
-function buttonpress(){
-  ispress = true;
-}
-
 //mixes the two playlists
 function mixPlaylists(event){
   var mixLevel = document.getElementById('mix-level').value;
@@ -101,11 +100,6 @@ function mixPlaylists(event){
       list: mix
     };
   newName = document.getElementsByClassName('name-playlist')[0].value;
-  // playlist1 = document.querySelector('playlist-name').innerHTML === "";
-  // newTitleLeft = document.getElementsByClassName('Song-input titleleft')[0].value;
-  // newTitleRight = document.getElementsByClassName('Song-input titleright')[0].value;
-  // newTitleArtLeft = document.getElementsByClassName('add-song add-song-left')[0].value;
-  // newTitleArtRight = document.getElementsByClassName('add-song add-song-right')[0].value;
   if(newName != '' && ispress==true){
     console.log("Name:", newName);
     songData = {
