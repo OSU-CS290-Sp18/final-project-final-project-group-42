@@ -2,9 +2,8 @@ var path = require('path');
 var express = require('express');
 var exphbs = require('express-handlebars');
 var songData = require('./songData.json');
-//var SpotifyWebApi = require('spotify-web-api-node');
 var fs = require('fs');
-//var spotifyApi = new SpotifyWebApi();
+
 var bodyParser = require('body-parser');
 
 var app = express();
@@ -33,6 +32,7 @@ app.get('/newPlaylist', function(req, res, next){
 });
 
 app.get('/playlist/:name', function(req, res, next){
+  songData = require('./songData.json');
   var name = req.params.name;
   var check = 0;
   if(songData[name]){
@@ -61,14 +61,6 @@ app.post('/playlist/:name/new', function(req, res, next) {
   });
 
  });
-
-//would be cool!
-// spotifyApi.getPlaylist('Real Music', '')
-//   .then(function(data) {
-//     console.log('Some information about this playlist', data.body);
-//   }, function(err) {
-//     console.log('Something went wrong!', err);
-//   });
 
 app.use(express.static('public'));
 
