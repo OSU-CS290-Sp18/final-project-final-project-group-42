@@ -58,7 +58,6 @@ app.post('/playlist/:name/new', function(req, res, next) {
     }
       res.status(200).end();
   });
-
  });
 
 app.use(express.static('public'));
