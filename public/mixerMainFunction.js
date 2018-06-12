@@ -164,7 +164,6 @@ function searchBar(event) {
   var playlists = document.getElementsByClassName('playlistBox');
   for(var i = 0; i < playlists.length; i++) {
     var title = playlists[i].getElementsByTagName("a")[0];
-    console.log("title:", title.textContent);
     if((title.textContent.toLowerCase().indexOf(search) >= 0)){
       playlists[i].classList.remove('hidden');
     }else {
@@ -173,6 +172,7 @@ function searchBar(event) {
   }
 }
 
+//when clicking on playlist on homescreen
 function playlistClick(event){
   window.location.href = '/playlist/' + event.currentTarget.firstElementChild.textContent;
 }
@@ -197,7 +197,6 @@ window.addEventListener('DOMContentLoaded', function(event){
   if(searchButton){
      searchButton.addEventListener('input', searchBar);
   }
-
   var playlistButton = document.getElementsByClassName('playlistBox');
   if(playlistButton.length != 0){
     for(var i = 0; i < playlistButton.length; i++){
