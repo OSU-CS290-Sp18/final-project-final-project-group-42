@@ -7,6 +7,7 @@ var newName;
 var allPlaylists = [];
 var searchButton = document.getElementById('Mixer-Search');
 var searchInput = document.getElementById('navbar-search-input');
+var ispress = false;
 
 //mixes the playlists
 function mixer(mixLevel, s1, s2){
@@ -86,6 +87,10 @@ function addSong2(){
   }
 }
 
+function buttonpress(){
+  ispress = true;
+}
+
 //mixes the two playlists
 function mixPlaylists(event){
   var mixLevel = document.getElementById('mix-level').value;
@@ -96,7 +101,12 @@ function mixPlaylists(event){
       list: mix
     };
   newName = document.getElementsByClassName('name-playlist')[0].value;
-  if(newName != ''){
+  // playlist1 = document.querySelector('playlist-name').innerHTML === "";
+  // newTitleLeft = document.getElementsByClassName('Song-input titleleft')[0].value;
+  // newTitleRight = document.getElementsByClassName('Song-input titleright')[0].value;
+  // newTitleArtLeft = document.getElementsByClassName('add-song add-song-left')[0].value;
+  // newTitleArtRight = document.getElementsByClassName('add-song add-song-right')[0].value;
+  if(newName != '' && ispress==true){
     console.log("Name:", newName);
     songData = {
       mixTitle: newName,
@@ -133,7 +143,7 @@ function mixPlaylists(event){
       saveButton[0].addEventListener('click', savePlaylists);
     }
   }else{
-    alert("Please include a title for the playlist")
+    alert("Please fill in missing attributes for the playlist")
   }
 }
 

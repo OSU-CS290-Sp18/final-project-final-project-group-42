@@ -1,11 +1,11 @@
 <div class = "add-song-info">
    <p class = "Title"> Title:
-     <input type="text" class="Song-input title{{side}}" placeholder="Song title">
+     <input type="text" class="Song-input title{{side}}" maxLength="33" placeholder="Song title">
    </p>
 
    <p class = "Artist"> Artist:
-     <input type="text" class="Song-input artist{{side}}" placeholder="Artist Name">
+     <input type="text" class="Song-input artist{{side}}" maxLength="18" placeholder="Artist Name">
    </p>
 
-  <button type="button" class="add-song add-song-{{side}}">Add Song</button>
+  <button type="button" class="add-song add-song-{{side}}" onclick="buttonpress();">Add Song</button>
 </div>
