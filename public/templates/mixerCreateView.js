@@ -14,6 +14,6 @@ templates['mixerCreateView'] = template({"1":function(container,depth0,helpers,p
 
   return "<div class=\"name-playlist-containter\">\r\n  <input type=\"text\" class=\"name-playlist\" placeholder=\"Name Playlist\">\r\n</div>\r\n<div class=\"mix\">\r\n  <h3> How often would you like to switch between playlists:</h3>\r\n  <select id=\"mix-level\">\r\n    <option value=\"1\">1</option>\r\n    <option value=\"2\">2</option>\r\n    <option value=\"3\">3</option>\r\n    <option value=\"4\">4</option>\r\n    <option value=\"5\">5</option>\r\n  </select>\r\n</div>\r\n<div>\r\n    <div class = \"mix-song-adders\">\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.playlists : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "    </div>\r\n</div>\r\n\r\n<div class=\"mix-playlists\">\r\n  <button id='mix-button'> Mix Playlists </button>\r\n</div>\r\n";
+    + "    </div>\r\n</div>\r\n\r\n<div class=\"mix-playlists\">\r\n  <button id='mix-button'> Mix Playlists </button>\r\n</div>\r\n\r\n<div id=\"mixlist-location\">\r\n  \r\n</div>\r\n";
 },"usePartial":true,"useData":true});
 })();

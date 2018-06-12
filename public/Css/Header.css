@@ -154,6 +154,12 @@ header {
        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
+.playlistBox:hover{
+  cursor: pointer;
+  background-color: #0277BD;
+  cursor: pointer;
+}
+
 .playLists {
   font-size: 15px;
 }
@@ -207,7 +213,7 @@ header {
      max-width: 325px;
      font-size: 15px;
      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
-     
+
 }
 
 /*
@@ -271,7 +277,7 @@ header {
   /* display: inline-block; */
      display: block;
      float: left;
- /* font-size: 18px; 
+ /* font-size: 18px;
    display: flex;
   align-items: left;
   justify-content: left;
@@ -283,7 +289,7 @@ header {
   /* white-space:nowrap; */
 
   /* margin-left: 10px; */
-  /* display: inline;*/ 
+  /* display: inline;*/
   text-align: right;
   color: white;
 }
@@ -298,7 +304,7 @@ header {
   padding: 0% 3% 0% 40%;
   background-color: #01579B;
   width: 100%;
-} 
+}
 
 
 .left{
