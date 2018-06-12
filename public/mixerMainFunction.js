@@ -113,7 +113,6 @@ function mixPlaylists(event){
         list: mix
       }]
     };
-    console.log("songData:", songData);
     if(document.body.lastElementChild.classList.contains('saveButton')){
       document.body.lastElementChild.remove();
     }
@@ -121,9 +120,10 @@ function mixPlaylists(event){
       document.body.lastElementChild.remove();
     }
     var playlistHTML = Handlebars.templates.playListTemplate(holder);
-    document.body.insertAdjacentHTML('beforeend', playlistHTML);
+    var insertLocation = document.getElementById('mixlist-location');
+    insertLocation.insertAdjacentHTML('beforeend', playlistHTML);
     var saveHTML = Handlebars.templates.saveTemplate();
-    document.body.insertAdjacentHTML('beforeend', saveHTML);
+    insertLocation.insertAdjacentHTML('beforeend', saveHTML);
 
     saveButton = document.getElementById('saveButton');
     var saveButton = document.getElementsByClassName('saveButton');
@@ -160,11 +160,10 @@ function savePlaylists(event){
 //searches
 function searchBar(event) {
   var search = event.currentTarget.value.toLowerCase();
-  console.log(event.currentTarget.value);
   var playlists = document.getElementsByClassName('playlistBox');
   for(var i = 0; i < playlists.length; i++) {
-    var title = playlists[i].getElementsByTagName("a")[0];
-    if((title.textContent.toLowerCase().indexOf(search) >= 0)){
+    var title = playlists[i].firstElementChild;
+    if(title.textContent.toLowerCase().indexOf(search) >= 0){
       playlists[i].classList.remove('hidden');
     }else {
       playlists[i].classList.add('hidden');
@@ -177,7 +176,7 @@ function playlistClick(event){
   window.location.href = '/playlist/' + event.currentTarget.firstElementChild.textContent;
 }
 
-window.addEventListener('DOMContentLoaded', function(event){
+window.addEventListener('DOMContentLoaded', function(){
   var addButtonLeft = document.getElementsByClassName('add-song-left');
   console.log(addButtonLeft);
   if(addButtonLeft.length != 0) {
