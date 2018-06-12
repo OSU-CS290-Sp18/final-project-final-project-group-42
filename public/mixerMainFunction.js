@@ -101,15 +101,15 @@ function mixPlaylists(event){
     songData = {
       mixTitle: newName,
       mixLists: [{
-        subPlaylistName: 'Playlist 1',
+        playListName: 'Playlist 1',
         list: s1
       },
       {
-        subPlaylistName: 'Playlist 2',
+        playListName: 'Playlist 2',
         list: s2
       },
       {
-        subPlaylistName: 'Playlist Mix!',
+        playListName: 'Playlist Mix!',
         list: mix
       }]
     };
