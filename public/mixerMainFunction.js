@@ -50,7 +50,7 @@ function addSong1(){
     });
     var holder =
       {
-        subPlaylistName: 'Playlist 1',
+        playListName: 'Playlist 1',
         list: s1
       };
     //tempData.push(holder);
@@ -74,7 +74,7 @@ function addSong2(){
     });
     var holder =
       {
-        subPlaylistName: 'Playlist 2',
+        playListName: 'Playlist 2',
         list: s2
       };
     //tempData.push(holder);
@@ -91,7 +91,7 @@ function mixPlaylists(event){
   mix = mixer(mixLevel, s1, s2);
   var holder =
     {
-      subPlaylistName: 'Playlist Mix!',
+      playListName: 'Playlist Mix!',
       list: mix
     };
   newName = document.getElementsByClassName('name-playlist')[0].value;

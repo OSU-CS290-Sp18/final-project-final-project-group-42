@@ -28,7 +28,7 @@ app.get('/newPlaylist', function(req, res, next){
     res.render('mixerCreateView', {
       title: 'New Playlist',
       playlists: [{side: 'left'},{side: 'right'}]
-    })
+    });
 });
 
 app.get('/playlist/:name', function(req, res, next){

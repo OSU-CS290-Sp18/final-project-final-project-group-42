@@ -11,9 +11,9 @@ templates['playListTemplate'] = template({"1":function(container,depth0,helpers,
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
-  return "<div class=\"playlist-name\">\n  "
+  return "\n<div class = \"playListBox\">\n  <div class=\"playlist-name\">\n    "
     + container.escapeExpression(((helper = (helper = helpers.playListName || (depth0 != null ? depth0.playListName : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"playListName","hash":{},"data":data}) : helper)))
-    + "\n</div><div class = \"playListBox\">\n  <ol class = \"playLists\">\n"
+    + "\n\n  </div>\n    <ol class = \"playLists\">\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.list : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "  </ol>\n</div>\n";
 },"useData":true});
