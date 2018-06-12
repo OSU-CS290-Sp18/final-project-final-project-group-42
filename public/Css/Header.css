@@ -13,6 +13,7 @@ header {
 
 .navlist {
   padding-bottom: 14px;
+  margin-bottom: 0px;
   margin-top: 3px;
 }
 
@@ -133,14 +134,16 @@ header {
 }
 
 .playListBox {
-  border: black solid 1px;
-  /* border-radius: 10px; */
-  background-color: #a3c1f0;
+  border-radius: 10px;
+  background-color: rgb(80, 132, 173);/*rgba(0, 0, 0, 0.25);*/
+  max-width: 325px;
   color: white;
+  font-size: 25px;
+  padding: 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
-.playlistBox{
+.playlistBox {
        /* border: black solid 1px; */
        background-color: #01579B;
        margin: 5px 20px 5px 20px;
@@ -151,8 +154,16 @@ header {
        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
+.playLists {
+  font-size: 15px;
+}
 
-.add-song{
+.playlist-name {
+  padding-bottom: 5px;
+  border-bottom: rgba(213, 213, 213, 0.4) solid 2px;
+}
+
+.add-song {
     background-color: #319df6;
     border: none;
     border-radius: 10px;
@@ -186,23 +197,44 @@ header {
 
 }
 
-.playlist{
-     background-color: #01579B;
+.playlist {
+     display: inline-block;
+     background-color: none;/*#01579B;*/
+     border: 10px;
+     width: 60%;
      margin: auto;
-     width: 50%;
      padding: 10px;
+     max-width: 325px;
      font-size: 15px;
-     color: black;
+     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
+.playlist:first-of-type {
+  /* border-radius: 0px 0px 10px 10px; */
+  margin-left: 15%;
+  margin-right: 100px;
+}
+
+.playlist:last-of-type {
+  margin-top: 50px;
+  margin-left: 28%;
+  display: block;
+  /* border-radius: 0px 0px 10px 10px; */
+}
+
+.playlist-container {
+  /* max-width: 50%; */
+}
 
 .mixTitle{
    background-color: #a3c1f0;
    padding: 2% 0% 2% 3%;
+   padding: 10px;
+   max-height: 30px;
    margin-top: 0;
    color: white;
    font-size: 30px;
-   padding-left: 20%
+   padding-left: 10%;
 }
 
 .mix{
