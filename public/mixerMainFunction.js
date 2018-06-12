@@ -173,7 +173,11 @@ function searchBar(event) {
   }
 }
 
-window.addEventListener('DOMContentLoaded', function(){
+function playlistClick(event){
+  window.location.href = '/playlist/' + event.currentTarget.firstElementChild.textContent;
+}
+
+window.addEventListener('DOMContentLoaded', function(event){
   var addButtonLeft = document.getElementsByClassName('add-song-left');
   console.log(addButtonLeft);
   if(addButtonLeft.length != 0) {
@@ -192,5 +196,12 @@ window.addEventListener('DOMContentLoaded', function(){
   var searchButton = document.getElementById('navbar-search-input');
   if(searchButton){
      searchButton.addEventListener('input', searchBar);
+  }
+
+  var playlistButton = document.getElementsByClassName('playlistBox');
+  if(playlistButton.length != 0){
+    for(var i = 0; i < playlistButton.length; i++){
+      playlistButton[i].addEventListener('click', playlistClick);
+    }
   }
 });
