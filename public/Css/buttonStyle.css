@@ -5,8 +5,8 @@
 #create-button {
   border: none;
   background: none;
-  padding: 5% 10%;
-  outline: none
+  padding: 5% 40% ;
+  outline: none;
 }
 
 #create-button a{
@@ -16,13 +16,13 @@
   color: white;
   background-color: #01579B;
   font-size: 100px;
-  padding: 100px 200px;
   margin: none;
   shape-outside: none;
   cursor: pointer;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
   border: none;
   border-radius: 10px;
+  
 }
 
 #create-button a:hover{
