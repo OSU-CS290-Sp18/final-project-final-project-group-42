@@ -7,14 +7,20 @@ templates['playListTemplate'] = template({"1":function(container,depth0,helpers,
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.artist || (depth0 != null ? depth0.artist : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"artist","hash":{},"data":data}) : helper)))
-    + "</li>\n";
+    + "</li>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
+<<<<<<< HEAD
   return "\n<div class = \"playListBox\">\n  <div class=\"playlist-name\">\n    "
     + container.escapeExpression(((helper = (helper = helpers.playListName || (depth0 != null ? depth0.playListName : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"playListName","hash":{},"data":data}) : helper)))
     + "\n\n  </div>\n    <ol class = \"playLists\">\n"
+=======
+  return "<div class=\"playlist-name\">\r\n  "
+    + container.escapeExpression(((helper = (helper = helpers.playListName || (depth0 != null ? depth0.playListName : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"playListName","hash":{},"data":data}) : helper)))
+    + "\r\n</div><div class = \"playListBox\">\r\n  <ol class = \"playLists\">\r\n"
+>>>>>>> 7de116cf6075167fad9d1210b956f277ada0bb3e
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.list : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "  </ol>\n</div>\n";
+    + "  </ol>\r\n</div>\r\n";
 },"useData":true});
 })();
