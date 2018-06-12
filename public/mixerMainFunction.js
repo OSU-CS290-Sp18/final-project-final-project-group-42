@@ -43,38 +43,47 @@ function addSong1(){
   var addSongContainer = document.getElementsByClassName('left');
   var title = document.getElementsByClassName('titleleft')[0].value;
   var artist = document.getElementsByClassName('artistleft')[0].value;
-  s1.push({
-    title: title,
-    artist: artist
-  });
-  var holder =
-    {
-      subPlaylistName: 'Playlist 1',
-      list: s1
-    };
-  //tempData.push(holder);
-  addSongContainer[0].lastElementChild.remove();//  addSongContainer[0].removeChild(addSongContainer[0].lastChild);
-  var playlistHTML = Handlebars.templates.playListTemplate(holder);
-  addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
+  if(title != '' && artist != ''){
+    s1.push({
+      title: title,
+      artist: artist
+    });
+    var holder =
+      {
+        subPlaylistName: 'Playlist 1',
+        list: s1
+      };
+    //tempData.push(holder);
+    addSongContainer[0].lastElementChild.remove();//  addSongContainer[0].removeChild(addSongContainer[0].lastChild);
+    var playlistHTML = Handlebars.templates.playListTemplate(holder);
+    addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
+  }else {
+    alert("Please include a title and artist name");
+  }
 }
 
 function addSong2(){
   var addSongContainer = document.getElementsByClassName('right');
   var title = document.getElementsByClassName('titleright')[0].value;
   var artist = document.getElementsByClassName('artistright')[0].value;
-  s2.push({
-    title: title,
-    artist: artist
-  });
-  var holder =
-    {
-      subPlaylistName: 'Playlist 2',
-      list: s2
-    };
-  //tempData.push(holder);
-  addSongContainer[0].lastElementChild.remove();
-  var playlistHTML = Handlebars.templates.playListTemplate(holder);
-  addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
+  console.log("title: ", title);
+  if(title != '' && artist != ''){
+    s2.push({
+      title: title,
+      artist: artist
+    });
+    var holder =
+      {
+        subPlaylistName: 'Playlist 2',
+        list: s2
+      };
+    //tempData.push(holder);
+    addSongContainer[0].lastElementChild.remove();
+    var playlistHTML = Handlebars.templates.playListTemplate(holder);
+    addSongContainer[0].insertAdjacentHTML('beforeend', playlistHTML);
+  }else{
+    alert("Please include a title and artist name");
+  }
 }
 
 function mixPlaylists(event){
@@ -86,40 +95,44 @@ function mixPlaylists(event){
       list: mix
     };
   newName = document.getElementsByClassName('name-playlist')[0].value;
-  console.log("Name:", newName);
-  songData = {
-    mixTitle: newName,
-    mixLists: [{
-      subPlaylistName: 'Playlist 1',
-      list: s1
-    },
-    {
-      subPlaylistName: 'Playlist 2',
-      list: s2
-    },
-    {
-      subPlaylistName: 'Playlist Mix!',
-      list: mix
-    }]
-  };
-  console.log("songData:", songData);
-  if(document.body.lastElementChild.classList.contains('saveButton')){
-    document.body.lastElementChild.remove();
-  }
-  if(document.body.lastElementChild.classList.contains('playListBox')){
-    document.body.lastElementChild.remove();
-  }
-  var playlistHTML = Handlebars.templates.playListTemplate(holder);
-  document.body.insertAdjacentHTML('beforeend', playlistHTML);
-  var saveHTML = Handlebars.templates.saveTemplate();
-  document.body.insertAdjacentHTML('beforeend', saveHTML);
+  if(newName != ''){
+    console.log("Name:", newName);
+    songData = {
+      mixTitle: newName,
+      mixLists: [{
+        subPlaylistName: 'Playlist 1',
+        list: s1
+      },
+      {
+        subPlaylistName: 'Playlist 2',
+        list: s2
+      },
+      {
+        subPlaylistName: 'Playlist Mix!',
+        list: mix
+      }]
+    };
+    console.log("songData:", songData);
+    if(document.body.lastElementChild.classList.contains('saveButton')){
+      document.body.lastElementChild.remove();
+    }
+    if(document.body.lastElementChild.classList.contains('playListBox')){
+      document.body.lastElementChild.remove();
+    }
+    var playlistHTML = Handlebars.templates.playListTemplate(holder);
+    document.body.insertAdjacentHTML('beforeend', playlistHTML);
+    var saveHTML = Handlebars.templates.saveTemplate();
+    document.body.insertAdjacentHTML('beforeend', saveHTML);
 
-  saveButton = document.getElementById('saveButton');
-  var saveButton = document.getElementsByClassName('saveButton');
-  console.log("Save Button:", saveButton);
-  if(saveButton){
-    console.log("saveButton Click??")
-    saveButton[0].addEventListener('click', savePlaylists);
+    saveButton = document.getElementById('saveButton');
+    var saveButton = document.getElementsByClassName('saveButton');
+    console.log("Save Button:", saveButton);
+    if(saveButton){
+      console.log("saveButton Click??")
+      saveButton[0].addEventListener('click', savePlaylists);
+    }
+  }else{
+    alert("Please include a title for the playlist")
   }
 }
 
