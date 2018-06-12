@@ -266,18 +266,22 @@ header {
 
 .title-list {
   /* display: inline-block; */
-  /* font-size: 18px; */
-  display: block;
-  min-width: 180px;
-  float: left;
+     display: block;
+     float: left;
+ /* font-size: 18px; 
+   display: flex;
+  align-items: left;
+  justify-content: left;
+  min-width: 180px;*/
 
 }
+
 .artist-list {
   /* white-space:nowrap; */
 
   /* margin-left: 10px; */
-  /* display: inline; */
-  /* float: right; */
+  /* display: inline;*/ 
+  text-align: right;
   color: black;
 }
 
