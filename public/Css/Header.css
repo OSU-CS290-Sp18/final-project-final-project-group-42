@@ -154,10 +154,6 @@ header {
        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
-.playlistBox:hover{
-  background-color: #0277BD;
-}
-
 .playLists {
   font-size: 15px;
 }
@@ -211,7 +207,7 @@ header {
      max-width: 325px;
      font-size: 15px;
      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2), 0 1.5px 5px 0 rgba(0, 0, 0, 0.19);
-
+     
 }
 
 /*
@@ -275,7 +271,7 @@ header {
   /* display: inline-block; */
      display: block;
      float: left;
- /* font-size: 18px;
+ /* font-size: 18px; 
    display: flex;
   align-items: left;
   justify-content: left;
@@ -287,7 +283,7 @@ header {
   /* white-space:nowrap; */
 
   /* margin-left: 10px; */
-  /* display: inline;*/
+  /* display: inline;*/ 
   text-align: right;
   color: black;
 }
@@ -302,7 +298,7 @@ header {
   padding: 0% 3% 0% 40%;
   background-color: #01579B;
   width: 100%;
-}
+} 
 
 
 .left{
@@ -339,7 +335,7 @@ header {
 .saveButton{
     background-color: #319df6;
     border: none;
-    margin: 0 0 0 0;
+    margin: 0px 0px 0px 0px;
     border-radius: 2px;
     color: white;
     font-size: 20px;
@@ -371,9 +367,10 @@ header {
    align-items: center;
    justify-content: center;
    flex-wrap: wrap;
-<<<<<<< HEAD
 }
-=======
 
+.mixlist-location{
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
->>>>>>> 40c7d2d7bc0d22da16b7b420d9f67531c0bc018c
