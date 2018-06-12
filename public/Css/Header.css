@@ -155,6 +155,7 @@ header {
 }
 
 .playlistBox:hover{
+  cursor: pointer;
   background-color: #0277BD;
 }
 
