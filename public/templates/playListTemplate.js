@@ -11,9 +11,15 @@ templates['playListTemplate'] = template({"1":function(container,depth0,helpers,
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {});
 
+<<<<<<< HEAD
   return "<div class = \"playListBox\">\r\n  "
     + container.escapeExpression(((helper = (helper = helpers.playListName || (depth0 != null ? depth0.playListName : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"playListName","hash":{},"data":data}) : helper)))
     + "\r\n  <ol class = \"playLists\">\r\n"
+=======
+  return "<div class=\"playlist-name\">\n  "
+    + container.escapeExpression(((helper = (helper = helpers.playListName || (depth0 != null ? depth0.playListName : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"playListName","hash":{},"data":data}) : helper)))
+    + "\n</div><div class = \"playListBox\">\n  <ol class = \"playLists\">\n"
+>>>>>>> f75253ae872989e08ad07a2047cebab26c5227f7
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.list : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "  </ol>\r\n</div>\r\n";
 },"useData":true});
